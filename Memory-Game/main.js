@@ -32,7 +32,7 @@ if (window.location.pathname !== "/Memory-Game/pages/endgame.html") {
     localStorage.setItem("soundPermission", soundPermission);
   });
 }
-if (window.location.pathname === "/Memory-Game/index.html") {
+if (window.location.pathname === "/Memory-Game/") {
   localStorage.removeItem("userName");
   localStorage.removeItem("time");
   localStorage.removeItem("seconds");
