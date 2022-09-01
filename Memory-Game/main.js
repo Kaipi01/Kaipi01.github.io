@@ -1,5 +1,5 @@
 let soundPermission;
-if (window.location.pathname !== "./pages/endgame.html") {
+if (window.location.pathname !== "/Memory-Game/pages/endgame.html") {
   const soundBtn = document.querySelector(".soundBtn");
   soundPermission = localStorage.getItem("soundPermission");
   if (soundPermission === null) {
@@ -32,7 +32,7 @@ if (window.location.pathname !== "./pages/endgame.html") {
     localStorage.setItem("soundPermission", soundPermission);
   });
 }
-if (window.location.pathname === "./index.html") {
+if (window.location.pathname === "/Memory-Game/index.html") {
   localStorage.removeItem("userName");
   localStorage.removeItem("time");
   localStorage.removeItem("seconds");
@@ -44,9 +44,9 @@ if (window.location.pathname === "./index.html") {
     localStorage.setItem("userName", userName);
   });
   startBtn.addEventListener("click", () => {
-    window.location.replace("./pages/game.html");
+    window.location.replace("/Memory-Game/pages/game.html");
   });
-} else if (window.location.pathname === "./pages/game.html") {
+} else if (window.location.pathname === "/Memory-Game/pages/game.html") {
   startGame();
 } else {
   showResults();
@@ -106,10 +106,10 @@ function startGame() {
     "silver",
   ];
 
-  const tipSound = new Audio("./sounds/freetip.wav");
-  const badSound = new Audio("./sounds/bad.wav");
-  const goodSound = new Audio("./sounds/good.wav");
-  const winSound = new Audio("./sounds/win.wav");
+  const tipSound = new Audio("/Memory-Game/sounds/freetip.wav");
+  const badSound = new Audio("/Memory-Game/sounds/bad.wav");
+  const goodSound = new Audio("/Memory-Game/sounds/good.wav");
+  const winSound = new Audio("/Memory-Game/sounds/win.wav");
   const cards = document.querySelectorAll(".card");
   const trialsSelector = document.querySelector(".trials");
   const tipBtns = document.querySelectorAll(".tip");
@@ -190,7 +190,7 @@ function startGame() {
           <h2 class="winTitle">You Win!</h2>
         `;
       setTimeout(() => {
-        window.location.replace("./pages/endgame.html");
+        window.location.replace("/Memory-Game/pages/endgame.html");
       }, 3000);
     }
 
