@@ -1,5 +1,3 @@
-import Sortable from "./Sortable.min";
-
 const themeBtn = document.querySelector(".theme-btn"),
   checkBtns = document.querySelectorAll(".task__btn-check"),
   taskDeleteBtns = document.querySelectorAll(".task__btn-delete"),
@@ -87,14 +85,14 @@ function add(name) {
     markAsComplete(task);
   });
   checkBtnIcon.className = "task__btn-check-icon";
-  checkBtnIcon.src = checkIcon;
+  checkBtnIcon.src = './images/icon-check.svg';
   checkBtnIcon.alt = "task complete";
 
   deleteBtn.className = "btn task__btn-delete";
   deleteBtn.addEventListener("click", () => {
     remove(task);
   });
-  deleteBtnIcon.src = crossIcon;
+  deleteBtnIcon.src = './images/icon-cross.svg';
   deleteBtnIcon.alt = "delete task";
 
   checkBtn.append(checkBtnIcon);
