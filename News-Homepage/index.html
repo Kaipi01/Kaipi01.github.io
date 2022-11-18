@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./main.css" />
+    <script defer src="./script.js"></script>
+    <title>Frontend Mentor | News homepage</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">News Homepage</h1>
+        <nav class="nav">
+          <a class="nav__logo" href="#Home">
+            <img
+              class="nav__logo-img"
+              src="./assets/images/logo.svg"
+              alt="News logo"
+            />
+          </a>
+          <button class="nav__menu-btn">
+            <span class="nav__menu-btn-span">Menu</span>
+            <img
+              class="nav__menu-btn-img nav__menu-btn-img-open"
+              src="./assets/images/icon-menu.svg"
+              alt="open menu"
+            />
+            <img
+              class="nav__menu-btn-img nav__menu-btn-img-close nav__menu-btn-img--hide"
+              src="./assets/images/icon-menu-close.svg"
+              alt="close menu"
+            />
+          </button>
+          <ul class="nav__menu nav__menu--hide">
+            <li><a class="link nav__menu-link" href="#Home">Home</a></li>
+            <li><a class="link nav__menu-link" href="#New">New</a></li>
+            <li><a class="link nav__menu-link" href="#Popular">Popular</a></li>
+            <li>
+              <a class="link nav__menu-link" href="#Trending">Trending</a>
+            </li>
+            <li>
+              <a class="link nav__menu-link" href="#Categories">Categories</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="content">
+        <article class="hero">
+          <h2 class="hero__title">
+            The Bright <br />
+            Future of Web 3.0?
+          </h2>
+          <img
+            class="hero__img hero__img-mobile"
+            src="./assets/images/image-web-3-mobile.jpg"
+            alt="colorful undefined shapes"
+          />
+          <img
+            class="hero__img hero__img-desktop"
+            src="./assets/images/image-web-3-desktop.jpg"
+            alt="colorful undefined shapes"
+          />
+          <div>
+          <p class="hero__text">
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <a class="hero__link" href="article1">read more</a>
+        </div>
+        </article>
+        <aside class="news">
+          <h2 class="news__title">New</h2>
+          <article class="news__article">
+            <h3 class="news__article-title">
+              <a class="link" href="#article2"
+                >Hydrogen <abbr class="abbr" title="Versus">VS</abbr> Electric
+                Cars</a
+              >
+            </h3>
+            <p class="news__article-text">
+              Will hydrogen-fueled cars ever catch up to
+              <abbr class="abbr" title="Electric Vehicles">EV</abbr>s?
+            </p>
+          </article>
+          <article class="news__article">
+            <h3 class="news__article-title">
+              <a class="link" href="#article3"
+                >The Downsides of
+                <abbr class="abbr" title="Artificial Intelligence">AI</abbr>
+                Artistry</a
+              >
+            </h3>
+            <p class="news__article-text">
+              What are the possieble adverse effects of on-demand
+              <abbr class="abbr" title="Artificial Intelligence">AI</abbr> image
+              generation?
+            </p>
+          </article>
+          <article class="news__article">
+            <h3 class="news__article-title">
+              <a class="link" href="#article4"
+                >Is <abbr class="abbr" title="Venture Capital">VC</abbr> Funding
+                Drying Up?</a
+              >
+            </h3>
+            <p class="news__article-text">
+              Private funding by
+              <abbr class="abbr" title="Venture Capital">VC</abbr> firms is down
+              50% <abbr class="abbr" title="Year On Year">YOY</abbr>. We take a look at what
+              that means.
+            </p>
+          </article>
+        </aside>
+        <section class="articles">
+          <h2 class="articles__head">More articles</h2>
+          <ol class="articles__list">
+            <li>
+              <article class="articles__content">
+                <h3 class="articles__title">
+                  <a class="link" href="#article5">
+                    Reviving Retro
+                    <abbr class="abbr" title="Personal Computer">PC</abbr>s</a
+                  >
+                </h3>
+                <img
+                  class="articles__img"
+                  src="./assets/images/image-retro-pcs.jpg"
+                  alt="retro computers"
+                />
+                <p class="articles__text">
+                  What happens when old
+                  <abbr class="abbr" title="Personal Computer">PC</abbr>s are
+                  given modern upgrades?
+                </p>
+              </article>
+            </li>
+            <li>
+              <article class="articles__content">
+                <h3 class="articles__title">
+                  <a class="link" href="#article6">Top 10 laptops of 2022</a>
+                </h3>
+                <img
+                  class="articles__img"
+                  src="./assets/images/image-top-laptops.jpg"
+                  alt="laptop keyboard"
+                />
+                <p class="articles__text">Our best picks for various needs and budgets.</p>
+              </article>
+            </li>
+            <li>
+              <article class="articles__content">
+                <h3 class="articles__title">
+                  <a class="link" href="#article7">The Growth of Gaming</a>
+                </h3>
+                <img
+                  class="articles__img"
+                  src="./assets/images/image-gaming-growth.jpg"
+                  alt="pad from the console"
+                />
+                <p class="articles__text">How the pandemic has sparked fresh oppurtunities.</p>
+              </article>
+            </li>
+          </ol>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
