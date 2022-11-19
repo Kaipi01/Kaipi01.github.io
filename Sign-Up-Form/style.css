@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(0, 100%, 69%);
+  background-image: url(./images/bg-intro-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: hsl(0, 0%, 100%);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (min-width: 1000px) {
+  body {
+    background-image: url(./images/bg-intro-desktop.png);
+    text-align: start;
+  }
+}
+
+body > div {
+  margin: 70px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1100px;
+  gap: 50px;
+}
+
+header {
+  max-width: 500px;
+  width: 90vw;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  body > div {
+    flex-direction: row;
+    padding: 100px;
+  }
+}
+@media (min-width: 1100px) {
+  body > div {
+    flex-direction: row;
+    padding: 0px;
+  }
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main > p {
+  border-radius: 7px;
+  background-color: hsl(248, 37%, 44%);
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 18px 0;
+  text-align: center;
+  box-shadow: 0px 7px 0px 0px rgba(0, 0, 0, 0.229);
+}
+
+main > p > span {
+  max-width: 20ch;
+  display: block;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 1000px) {
+  main > p > span {
+    max-width: 40ch;
+  }
+}
+
+form {
+  box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.229);
+  padding: 30px;
+  text-align: center;
+  border-radius: 7px;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(249, 10%, 26%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
+  width: 90vw;
+  max-width: 475px;
+}
+
+@media (min-width: 1000px) {
+  form {
+    padding-bottom: 45px;
+  }
+}
+
+fieldset {
+  text-align: end;
+  border: none;
+  width: 100%;
+  position: relative;
+}
+
+fieldset > img {
+  position: absolute;
+  right: 20px;
+  top: 12.5px;
+  display: none;
+}
+
+fieldset > p {
+  display: none;
+  font-size: 0.7rem;
+  margin-top: -12px;
+  color: hsl(0, 100%, 69%);
+}
+
+fieldset > input.error {
+  border-color: hsl(0, 100%, 69%);
+  border-width: 2px;
+}
+
+fieldset > input.error ~ img {
+  display: block;
+}
+
+fieldset > input.error ~ p {
+  display: inline;
+}
+
+fieldset > input[name="email"].error::placeholder {
+  color: hsl(0, 100%, 69%);
+}
+
+form > p {
+  font-size: 0.7rem;
+}
+
+input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 15px 22px;
+  font-weight: bold;
+  border-radius: 7px;
+  color: hsl(249, 10%, 26%);
+  border: 1px solid hsl(246, 25%, 77%);
+  transition: all 0.3s ease-in-out;
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+}
+
+input:focus {
+  box-shadow: 0px 0px 0px 1px hsl(248, 37%, 44%);
+  border-color: hsl(248, 37%, 44%) !important;
+  outline: none;
+}
+
+button {
+  box-shadow: 0px 4px 0px 0px hsl(154, 74%, 27%);
+  border-radius: 7px;
+  background-color: hsl(154, 64%, 47%);
+  border: none;
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 17px 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover,
+button:focus {
+  background-color: rgb(78, 223, 160);
+}
+
+a {
+  color: hsl(0, 100%, 74%);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+label {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+abbr {
+  text-decoration: none;
+}
