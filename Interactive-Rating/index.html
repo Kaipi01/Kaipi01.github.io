@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+  <body>
+    <main>
+      <div class="rate-us">
+        <img class="rate-us-img" src="./images/icon-star.svg" alt="icon star" />
+        <h1 class="rate-us-title">How did we do?</h1>
+        <p class="rate-us-text">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <form>
+          <div role="radiogroup" class="rate-us-radiogroup">
+            <button type="button" role="radio" aria-checked="false">1</button>
+            <button type="button" role="radio" aria-checked="false">2</button>
+            <button type="button" role="radio" aria-checked="false">3</button>
+            <button type="button" role="radio" aria-checked="false">4</button>
+            <button type="button" role="radio" aria-checked="false">5</button>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <section class="thanks hide">
+        <img
+          class="thanks-img"
+          src="./images/illustration-thank-you.svg"
+          aria-hidden="true"
+          alt="image"
+        />
+        <p class="thanks-score">
+          You selected
+          <span class="thanks-score-value"></span>
+          out of 5
+        </p>
+        <h2 class="thanks-title">Thank you!</h2>
+        <p class="thanks-text">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
