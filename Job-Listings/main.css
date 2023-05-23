@@ -113,11 +113,11 @@ body {
   width: 100%;
   min-height: 155px;
   background-color: hsl(180, 29%, 50%);
-  background-image: url(../src/images/bg-header-mobile.svg);
+  background-image: url(./images/bg-header-mobile.svg);
 }
 @media (min-width: 1000px) {
   .header {
-    background-image: url(../src/images/bg-header-desktop.svg);
+    background-image: url(./images/bg-header-desktop.svg);
   }
 }
 
