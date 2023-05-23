@@ -12,13 +12,13 @@ export default function renderJobsList(data = []) {
                 <div class="job__info">
 
                     <div class="job__header">
-                        <a class="job__company-name" href="#${company}">${company}</a>
+                        <a class="job__company-name" href="#">${company}</a>
                         ${ isNew ? '<span class="job__tag">NEW!</span>' : '' }
                         ${ featured ? '<span class="job__tag job__tag--dark">FEATURED</span>' : '' }
                     </div>
 
                     <h2 class="job__position">
-                        <a class="job__position-link" href="#${position}">${position}</a>
+                        <a class="job__position-link" href="#">${position}</a>
                     </h2>
 
                     <ul class="job__info-list">
