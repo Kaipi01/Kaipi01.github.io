@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>FAQ</title>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- FAQ START -->
+        <section id="FAQ-modul-e-szlaki">
+
+            <div class="faq-main-content">
+
+                <div class="header faq-main-header">
+                    <p class="faq-big-header">FAQ</p>
+                    <p class="faq-sub-header">Najczęściej zadawane pytania</p> 
+                </div>
+
+                <div class="faq-search-panel" style="position: relative;">
+
+                    <form class="faq-search-form">
+                        <button class="faq-search-btn link variant2" type="submit">
+                            <i class="faq-icon fa-solid fa-magnifying-glass"></i>
+                            <span class="sr-only">Szukaj</span>
+                        </button>
+                        <div class="faq-search-box">
+                            <input class="floating-label-control faq-form-control " type="search" name="input-search"
+                                id="input-search" placeholder="Search">
+                            <label class="floating-label" for="input-search">Search</label>
+                        </div>
+                    </form>
+
+                    <img class="faq-module-main-icon" src="./images/question-icon.svg" alt="">
+                </div>
+
+                <nav class="faq-main-categories-panel modern-card">
+                    <p class="sr-only">Kategorie pytań</p>
+
+                    <ul class="sidebar-menu faq-categories-nav">
+                        <li class="category-item">
+                            <a data-faq-category-link class="menu-tab-label faq-category-link link variant2 active"
+                                href="#start">
+                                <i class="menu-tab-icon fa-regular fa-circle-question" aria-hidden="true"></i>
+                                <span>Start</span>
+                            </a>
+                        </li>
+                        <li class="menu-tab category-item">
+                            <input type="checkbox" name="menu-1" id="menu-cb123">
+                            <label for="menu-cb123" class="menu-tab-label faq-category-link link variant2">
+                                <i class="menu-tab-icon fa-regular fa-newspaper" aria-hidden="true"></i>
+                                <span>Blog</span>
+                            </label>
+                            <div class="menu-tab-content">
+                                <ul class="sidebar-sub-menu">
+                                    <li class="category-item">
+                                        <a data-faq-category-link class="menu-tab-label faq-category-link link variant2"
+                                            href="#mistycyzm">
+                                            <i class="menu-tab-icon fa-solid fa-yin-yang" aria-hidden="true"></i>
+                                            <span>Mistycyzm</span>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a data-faq-category-link class="menu-tab-label faq-category-link link variant2"
+                                            href="#profilaktyka">
+                                            <i class="menu-tab-icon fa-solid fa-notes-medical" aria-hidden="true"></i>
+
+                                            <span>Profilaktyka</span>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a data-faq-category-link class="menu-tab-label faq-category-link link variant2"
+                                            href="#wydarzenie">
+                                            <i class="menu-tab-icon fa-solid fa-calendar-days" aria-hidden="true"></i>
+                                            <span>Wydarzenie</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-tab category-item">
+                            <input type="checkbox" name="menu-3" id="menu-cb323">
+                            <label for="menu-cb323" class="menu-tab-label faq-category-link link variant2">
+                                <i class="menu-tab-icon fa-solid fa-layer-group"></i>
+                                <span>Aliqusemper</span>
+                            </label>
+                            <div class="menu-tab-content">
+                                <ul class="sidebar-sub-menu">
+                                    <li class="category-item">
+                                        <a data-faq-category-link class="menu-tab-label faq-category-link link variant2"
+                                            href="#maecenas">
+                                            <i class="menu-tab-icon fa-solid fa-sliders"></i>
+                                            <span>Maecenas</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="category-item">
+                            <a data-faq-category-link class="menu-tab-label faq-category-link link variant2"
+                                href="#nobis-dolorem">
+
+                                <i class="menu-tab-icon fa-solid fa-user"></i>
+                                <span>Nobis dolorem</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="faq-current-questions-panel modern-card">
+
+                    <div class="content">
+
+                        <div id="start" class="card-body screen-page screen-page-active screen-page-static"
+                            data-screen='{"slug": "start", "icon": "./images/question-icon.svg"}'>
+
+                            <div class="card-header">
+                                <i class="card-icon fa-regular fa-circle-question"></i>
+                                <p class="faq-small-header">Start</p>
+                            </div>
+
+                            <div class="card-content">
+                                 
+                                <p class="faq-intro">
+                                    Witaj! Ten moduł służy do szybkiego i wygodnego wyszukiwania odpowiedzi na najczęściej
+                                    pojawiające się pytania dotyczące naszego portalu. Jeśli jednak nie znajdziesz odpowiedzi na
+                                    swoje pytanie, zawsze możesz skontaktować się z nami za pomocą specjalnego formularza poniżej. Z
+                                    przyjemnością pomożemy!<i class="text"> - Grupa E-Szlaki</i>
+                                </p>
+
+                                <img class="faq-intro-image" src="./images/start.jpg" alt="" aria-hidden="true">
+                            </div>
+                        </div>
+
+                        <div id="mistycyzm" class="card-body screen-page"
+                            data-screen='{"slug": "mistycyzm", "icon": "./images/blog-icon.svg"}'>
+
+                            <div class="card-header">
+                                <i class="card-icon fa-solid fa-yin-yang" aria-hidden="true"></i>
+                                <p class="faq-small-header">Mistycyzm</p>
+                            </div>
+
+                            <ul class="faq-accordion faq-accordion--animated">
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox"
+                                        name="category-mistycyzm-group-1" id="category-mistycyzm-group-1">
+                                    <label class="faq-accordion__label faq-accordion__label-root"
+                                        for="category-mistycyzm-group-1">
+                                        <i class="faq-accordion__label-icon fa-solid fa-hand-holding-heart"></i>
+                                        <span>Prawo Przyciagania - Odkrywając Moc Myśli do Kreowania Własnej
+                                            Rzeczywistości</span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-mistycyzm-sub-group-1-1"
+                                                id="category-mistycyzm-sub-group-1-1">
+                                            <label class="faq-accordion__label" for="category-mistycyzm-sub-group-1-1">
+                                                <span> Czy Prawo Przyciągania działa na wszystkich?</span>
+                                            </label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, działa na wszystkich.
+                                                        Natomiast ważne jest, aby praktykować je świadomie i
+                                                        konsekwentnie.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-mistycyzm-sub-group-1-2"
+                                                id="category-mistycyzm-sub-group-1-2">
+                                            <label class="faq-accordion__label"
+                                                for="category-mistycyzm-sub-group-1-2"><span>Jak szybko mogę zobaczyć
+                                                    wyniki?</span></label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Wyniki mogą być różne w
+                                                        zależności od istoty i intensywności praktyki.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-mistycyzm-sub-group-1-3"
+                                                id="category-mistycyzm-sub-group-1-3">
+                                            <label class="faq-accordion__label"
+                                                for="category-mistycyzm-sub-group-1-3"><span> Czy istnieją naukowe
+                                                    dowody potwierdzające Prawo Przyciągania?</span></label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Istnieją badania i teorie,
+                                                        które wspierają ideę Prawa Przyciągania. Natomiast w świecie
+                                                        systemowym do dzisiaj ten temat jest nie zbadany.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-mistycyzm-sub-group-1-4"
+                                                id="category-mistycyzm-sub-group-1-4">
+                                            <label class="faq-accordion__label"
+                                                for="category-mistycyzm-sub-group-1-4"><span>Czy muszę medytować, aby to
+                                                    działało?</span></label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Medytacja jest jednym z
+                                                        narzędzi, które mogą pomóc, ale nie jest konieczna.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox"
+                                        name="category-mistycyzm-group-2" id="category-mistycyzm-group-2">
+                                    <label class="faq-accordion__label faq-accordion__label-root"
+                                        for="category-mistycyzm-group-2">
+                                        <i class="faq-accordion__label-icon fa-solid fa-eye"></i>
+                                        <span>Przebudzenie Ducha: Echa Przepowiedni Hopi i Połączenie z Ziemią
+                                        </span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-mistycyzm-sub-group-2-1"
+                                                id="category-mistycyzm-sub-group-2-1">
+                                            <label class="faq-accordion__label" for="category-mistycyzm-sub-group-2-1">
+                                                <span>Co oznacza przepowiednia Starego Indianina dla współczesnego
+                                                    świata?</span>
+                                            </label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Lorem ipsum dolor sit amet
+                                                        consectetur adipisicing elit. Corporis nisi cupiditate, porro
+                                                        iste unde ab voluptates ipsa eveniet, quam, blanditiis debitis
+                                                        hic beatae? Modi, dolor.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-mistycyzm-sub-group-2-2"
+                                                id="category-mistycyzm-sub-group-2-2">
+                                            <label class="faq-accordion__label"
+                                                for="category-mistycyzm-sub-group-2-2"><span>Jakie są główne elementy
+                                                    przepowiedni</span></label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Lorem ipsum dolor sit amet
+                                                        consectetur adipisicing elit. Corporis nisi cupiditate, porro
+                                                        iste unde ab voluptates ipsa eveniet, quam, blanditiis debitis
+                                                        hic beatae? Modi, dolor.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-mistycyzm-sub-group-2-3"
+                                                id="category-mistycyzm-sub-group-2-3">
+                                            <label class="faq-accordion__label"
+                                                for="category-mistycyzm-sub-group-2-3">Dlaczego duchowość jest
+                                                tak ważna w kulturze Hopi?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Lorem ipsum dolor sit amet
+                                                        consectetur adipisicing elit. Corporis nisi cupiditate, porro
+                                                        iste unde ab voluptates ipsa eveniet, quam, blanditiis debitis
+                                                        hic beatae? Modi, dolor.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-mistycyzm-sub-group-2-4"
+                                                id="category-mistycyzm-sub-group-2-4">
+                                            <label class="faq-accordion__label"
+                                                for="category-mistycyzm-sub-group-2-4">Jakie są konsekwencje
+                                                zapomnienia o instrukcjach życia na Ziemi?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Lorem ipsum dolor sit amet
+                                                        consectetur adipisicing elit. Corporis nisi cupiditate, porro
+                                                        iste unde ab voluptates ipsa eveniet, quam, blanditiis debitis
+                                                        hic beatae? Modi, dolor.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-mistycyzm-sub-group-2-5"
+                                                id="category-mistycyzm-sub-group-2-5">
+                                            <label class="faq-accordion__label"
+                                                for="category-mistycyzm-sub-group-2-5">Jakie działania możemy
+                                                podjąć, aby żyć w zgodzie z przepowiednią i
+                                                duchowością?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Lorem ipsum dolor sit amet
+                                                        consectetur adipisicing elit. Corporis nisi cupiditate, porro
+                                                        iste unde ab voluptates ipsa eveniet, quam, blanditiis debitis
+                                                        hic beatae? Modi, dolor.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div id="profilaktyka" class="card-body screen-page"
+                            data-screen='{"slug": "profilaktyka", "icon": "./images/blog-icon.svg"}'>
+
+                            <div class="card-header">
+                                <i class="card-icon fa-solid fa-notes-medical" aria-hidden="true"></i>
+                                <p class="faq-small-header">Profilaktyka</p>
+                            </div>
+
+                            <ul class="faq-accordion faq-accordion--animated">
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox"
+                                        name="category-profilaktyka-group-1" id="category-profilaktyka-group-1">
+                                    <label class="faq-accordion__label faq-accordion__label-root"
+                                        for="category-profilaktyka-group-1">
+                                        <i class="faq-accordion__label-icon fa-solid fa-tree"></i>
+                                        <span>Magiczne Właściwości Lasu: Jak Drzewa Wzmacniają Nasze Zdrowie i
+                                            Samopoczucie</span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-profilaktyka-sub-group-1-1"
+                                                id="category-profilaktyka-sub-group-1-1">
+                                            <label class="faq-accordion__label"
+                                                for="category-profilaktyka-sub-group-1-1">
+                                                Czy każdy las ma takie same korzyści zdrowotne?
+                                            </label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Nie, różne rodzaje lasów mają
+                                                        różne właściwości. Warto więc poznać je wszystkie i wybierać
+                                                        najlepsze dla nas.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-profilaktyka-sub-group-1-2"
+                                                id="category-profilaktyka-sub-group-1-2">
+                                            <label class="faq-accordion__label"
+                                                for="category-profilaktyka-sub-group-1-2">Czy kąpiele leśne są
+                                                bezpieczne?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, ale warto pamiętać o kilku
+                                                        zasadach bezpieczeństwa np: unikanie głębokich miejsc czy
+                                                        sprawdzanie dna przed skokiem.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-profilaktyka-sub-group-1-3"
+                                                id="category-profilaktyka-sub-group-1-3">
+                                            <label class="faq-accordion__label"
+                                                for="category-profilaktyka-sub-group-1-3">Jak często powinienem
+                                                spacerować po lesie, aby czerpać z jego korzyści?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Nawet krótki spacer raz w
+                                                        tygodniu może przynieść wiele korzyści. Aczkolwiek najlepiej
+                                                        regularnie angażować przestrzeń na świeżym powietrzu.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-profilaktyka-sub-group-1-4"
+                                                id="category-profilaktyka-sub-group-1-4">
+                                            <label class="faq-accordion__label"
+                                                for="category-profilaktyka-sub-group-1-4">Czy lasy w mieście mają
+                                                takie same korzyści zdrowotne jak te poza miastem?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, chociaż lasy miejskie mogą
+                                                        być bardziej zanieczyszczone, nadal oferują wiele korzyści
+                                                        zdrowotnych.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox"
+                                        name="category-profilaktyka-group-2" id="category-profilaktyka-group-2">
+                                    <label class="faq-accordion__label faq-accordion__label-root"
+                                        for="category-profilaktyka-group-2">
+                                        <i class="faq-accordion__label-icon fa-solid fa-mountain"></i>
+                                        <span>Kryształ Górski: Tajemnice Króla Kryształów i Jego Wpływ na Zdrowie i
+                                            Duchowość
+                                        </span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-profilaktyka-sub-group-2-1"
+                                                id="category-profilaktyka-sub-group-2-1">
+                                            <label class="faq-accordion__label"
+                                                for="category-profilaktyka-sub-group-2-1">
+                                                Czy Kryształ Górski jest odpowiedni dla każdego?
+                                            </label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, Kryształ Górski jest
+                                                        uniwersalnym kamieniem, który może być używany przez każdego,
+                                                        niezależnie od wieku czy doświadczenia w pracy z
+                                                        kamieniami.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-profilaktyka-sub-group-2-2"
+                                                id="category-profilaktyka-sub-group-2-2">
+                                            <label class="faq-accordion__label"
+                                                for="category-profilaktyka-sub-group-2-2">Jak często powinienem
+                                                oczyszczać mój Kryształ Górski?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Zaleca się oczyszczanie
+                                                        Kryształu Górskiego co najmniej raz w miesiącu lub częściej,
+                                                        jeśli jest często używany.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-profilaktyka-sub-group-2-3"
+                                                id="category-profilaktyka-sub-group-2-3">
+                                            <label class="faq-accordion__label"
+                                                for="category-profilaktyka-sub-group-2-3">Czy Kryształ Górski może
+                                                wspomóc medytację?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, Kryształ Górski jest
+                                                        doskonałym narzędziem do medytacji, pomagającym w głębszym
+                                                        skupieniu i łączeniu z wyższymi wymiarami.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-profilaktyka-sub-group-2-4"
+                                                id="category-profilaktyka-sub-group-2-4">
+                                            <label class="faq-accordion__label"
+                                                for="category-profilaktyka-sub-group-2-4">Czy Kryształ Górski jest
+                                                rzadki?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Nie, Kryształ Górski jest
+                                                        jednym z najbardziej powszechnych kamieni na świecie, ale jego
+                                                        jakość może się różnić w zależności od miejsca
+                                                        pochodzenia.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-profilaktyka-sub-group-2-5"
+                                                id="category-profilaktyka-sub-group-2-5">
+                                            <label class="faq-accordion__label"
+                                                for="category-profilaktyka-sub-group-2-5">Czy biżuteria z
+                                                Kryształem Górskim ma te same właściwości co surowy
+                                                kamień?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, biżuteria z Kryształem
+                                                        Górskim zachowuje wszystkie właściwości surowego kamienia, a
+                                                        dodatkowo może być noszona na co dzień, zapewniając ciągłe
+                                                        korzyści.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div id="wydarzenie" class="card-body screen-page"
+                            data-screen='{"slug": "wydarzenie", "icon": "./images/blog-icon.svg"}'>
+
+                            <div class="card-header">
+                                <i class="card-icon fa-solid fa-calendar-days" aria-hidden="true"></i>
+                                <p class="faq-small-header">Wydarzenie</p>
+                            </div>
+
+                            <ul class="faq-accordion faq-accordion--animated">
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox"
+                                        name="category-wydarzenie-group-1" id="category-wydarzenie-group-1">
+                                    <label class="faq-accordion__label faq-accordion__label-root"
+                                        for="category-wydarzenie-group-1">
+                                        <i class="faq-accordion__label-icon fa-solid fa-wine-bottle"></i>
+                                        <span>Magiczne Góry Złote: Odkrywanie sekretów Winiarni i Jaskini
+                                            Radochowskiej</span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-wydarzenie-sub-group-1-1"
+                                                id="category-wydarzenie-sub-group-1-1">
+                                            <label class="faq-accordion__label" for="category-wydarzenie-sub-group-1-1">
+                                                Czy w Winiarni Radochowskiej można zakupić wina i miody na
+                                                    miejscu?
+                                            </label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, winiarnia oferuje szeroki
+                                                        wybór win i miodów do zakupu na miejscu.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-wydarzenie-sub-group-1-2"
+                                                id="category-wydarzenie-sub-group-1-2">
+                                            <label class="faq-accordion__label"
+                                                for="category-wydarzenie-sub-group-1-2">Czy organizowane są
+                                                wycieczki do pasieki?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, po wcześniejszym umówieniu
+                                                        się można wziąć udział w wycieczce do pasieki.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-wydarzenie-sub-group-1-3"
+                                                id="category-wydarzenie-sub-group-1-3">
+                                            <label class="faq-accordion__label"
+                                                for="category-wydarzenie-sub-group-1-3">Jak długo trwa zwiedzanie
+                                                Jaskini Radochowskiej?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Zwiedzanie trwa około 40
+                                                        minut.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-wydarzenie-sub-group-1-4"
+                                                id="category-wydarzenie-sub-group-1-4">
+                                            <label class="faq-accordion__label"
+                                                for="category-wydarzenie-sub-group-1-4">Czy w jaskini można
+                                                spotkać nietoperze?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, w jaskini żyją nietoperze.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="faq-accordion__item ">
+                                            <input class="faq-accordion__input" type="checkbox"
+                                                name="category-wydarzenie-sub-group-1-5"
+                                                id="category-wydarzenie-sub-group-1-5">
+                                            <label class="faq-accordion__label"
+                                                for="category-wydarzenie-sub-group-1-5">Czy można poznać proces
+                                                produkcji miodu w winiarni?</label>
+
+                                            <ul class="faq-accordion__sub faq-accordion__sub--l2">
+                                                <li class="faq-accordion__item faq-accordion__content">
+                                                    <p>Tak, dla zainteresowanych
+                                                        organizowane są wycieczki, podczas których można poznać tajniki
+                                                        pszczelarstwa.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div id="nobis-dolorem" class="card-body screen-page"
+                            data-screen='{"slug": "nobis-dolorem", "icon": "./images/user-profile-icon.svg"}'>
+
+
+                            <div class="card-header">
+                                <i class="card-icon fa-solid fa-user"></i>
+                                <p class="faq-small-header">Nobis dolorem</p>
+                            </div>
+
+                            <ul class="faq-accordion faq-accordion--animated">
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox" name="group-3124"
+                                        id="group-3124">
+                                    <label class="faq-accordion__label faq-accordion__label-root" for="group-3124">
+                                        <i class="faq-accordion__label-icon fa-solid fa-clone"></i>
+                                        <span>Obcaecati quo optio doloremque quisquam ?</span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item faq-accordion__content">
+                                            <p>Possimus nesciunt necessitatibus, reprehenderit dolore
+                                                totam maiores <i>deleniti illo asperiores tempora</i> repudiandae
+                                                amet veniam
+                                                iste aut!</p>
+                                            <p>Lorem, ipsum dolor sit amet consectetur
+                                                adipisicing elit. Possimus <u>nesciunt necessitatibus</u>,
+                                                reprehenderit dolore
+                                                totam maiores deleniti illo asperiores tempora repudiandae amet
+                                                veniam
+                                                iste aut!</p>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox" name="group-7444"
+                                        id="group-7444">
+                                    <label class="faq-accordion__label faq-accordion__label-root" for="group-7444"> 
+                                        <i class="faq-accordion__label-icon fa-solid fa-circle-half-stroke"></i>
+                                        <span>Asperiores tempora repudiandae amet ?</span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item faq-accordion__content">
+                                            <ul class="green-list list">
+                                                <li>
+                                                    <span class="text">
+                                                        <span class="li-title">Curabitur non nibh vehicula</span>
+                                                        Vestibulum ante ipsum primis in faucibus
+                                                    </span>
+                                                    <span class="li-icon" aria-hidden="true">
+                                                        <i class="fa-solid fa-shield-halved"></i>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="text">
+                                                        <span class="li-title">Proin pretium at sem pretium
+                                                            pharetra</span>
+                                                        Morbi lacinia nisi posuere, eleifend enim
+                                                    </span>
+                                                    <span class="li-icon" aria-hidden="true">
+                                                        <i class="fa-solid fa-fire"></i>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="text">
+                                                        <span class="li-title">Etiam vestibulum tempor justo</span>
+                                                        In iaculis elementum justo, id rhoncus ex
+                                                    </span>
+                                                    <span class="li-icon" aria-hidden="true">
+                                                        <i class="fa-solid fa-money-bill"></i>
+
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="text">
+                                                        <span class="li-title">Donec quis mattis urna lacinia
+                                                            purus</span>
+                                                        Donec porta mauris non ultricies auctor.
+                                                    </span>
+                                                    <span class="li-icon" aria-hidden="true">
+                                                        <i class="fa-solid fa-globe"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox" name="group-1444"
+                                        id="group-1444">
+                                    <label class="faq-accordion__label faq-accordion__label-root" for="group-1444">
+                                        <i class="faq-accordion__label-icon fa-solid fa-cube"></i>
+                                        <span>Qui nostrum quam inventore doloribus autem beatae?</span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item faq-accordion__content">
+                                            <p>Nulla <i>laboriosam eius voluptate</i> facere id
+                                                consectetur harum, sed ipsam in! <a href="#" class="basic-link">Arum
+                                                    assumenda</a> ad aliquid et tenetur porro similique
+                                                excepturi cumque magnam reiciendis animi.
+                                            </p>
+                                            <ul class="basic-list">
+                                                <li>labore animi ab accusantium</li>
+                                                <li>quis nostrud exercitation</li>
+                                                <li>ex distinctio minima</li>
+                                                <li>earum architecto saepe</li>
+                                                <li>incididunt ut labore et dolore magna aliqua</li>
+                                            </ul>
+                                            <p>Nisi, iusto facilis maxime facere nihil labore itaque illo cupiditate
+                                                possimus sint veritatis eos eligendi voluptas suscipit. Facere
+                                                laboriosam velit
+                                                architecto amet ut</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="maecenas" class="card-body screen-page"
+                            data-screen='{"slug": "maecenas", "icon": "./images/bar-chart-icon.svg"}'>
+                            <div class="card-header">
+                                <i class="card-icon fa-solid fa-sliders"></i>
+                                <p class="faq-small-header">Maecenas</p>
+                            </div>
+
+                            <ul class="faq-accordion faq-accordion--animated">
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox" name="group-124" id="group-124">
+                                    <label class="faq-accordion__label faq-accordion__label-root" for="group-124">
+                                        <i class="faq-accordion__label-icon fa-regular fa-folder-open"></i>
+                                        <span>Derun empora repudiandae amet veniam iste aut!?</span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item faq-accordion__content">
+                                            <p>Deleniti, qui magni explicabo ratione corrupti, harum doloribus quia
+                                                suscipit consectetur nostrum dolorem magnam eveniet? Nesciunt esse,
+                                                perspiciatis velit culpa nam distinctio veniam incidunt vero
+                                                ducimus.</p>
+                                            <p>Maiores aliquam facere odio delectus et deserunt debitis
+                                                consequuntur. Laboriosam accusantium error recusandae iure est.</p>
+
+                                            <ul class="green-list list">
+                                                <li>
+                                                    <span class="text">
+                                                        <span class="li-title">Curabitur non nibh vehicula</span>
+                                                        Vestibulum ante ipsum primis in faucibus
+                                                    </span>
+                                                    <span class="li-icon" aria-hidden="true">
+                                                        <i class="fa-solid fa-gears"></i>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="text">
+                                                        <span class="li-title">Etiam vestibulum tempor justo</span>
+                                                        In iaculis elementum justo, id rhoncus ex
+                                                    </span>
+                                                    <span class="li-icon" aria-hidden="true">
+                                                        <i class="fa-solid fa-key"></i>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="text">
+                                                        <span class="li-title">Donec quis mattis urna lacinia
+                                                            purus</span>
+                                                        Donec porta mauris non ultricies auctor.
+                                                    </span>
+                                                    <span class="li-icon" aria-hidden="true">
+                                                        <i class="fa-solid fa-palette"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="faq-accordion__item faq-accordion__item-root">
+                                    <input class="faq-accordion__input" type="checkbox" name="group-444" id="group-444">
+                                    <label class="faq-accordion__label faq-accordion__label-root" for="group-444">
+                                        <i class="faq-accordion__label-icon fa-solid fa-cloud"></i>
+                                        <span>Inventore, commodi dolorum debitis accusantium ab fuga consequuntur ipsa
+                                            quis?</span>
+                                    </label>
+
+                                    <ul class="faq-accordion__sub faq-accordion__sub--l1">
+                                        <li class="faq-accordion__item faq-accordion__content">
+                                            <p>Lorem, ipsum dolor sit amet consectetur
+                                                adipisicing elit. <a href="#" class="basic-link">
+                                                    Ipsum dolor sit</a>, consectetur
+                                                adipisicing elit. Reprehenderit dolore
+                                                totam maiores deleniti illo asperiores <b>tempora repudiandae</b>
+                                                amet veniam
+                                                iste aut!</p>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="faq-contact-us-panel">
+
+                    <div class="header">
+                        <p class="faq-small-header">Nie ma tutaj odpowiedzi na Twoje pytanie?</p>
+                        <p class="text">
+                            Skontaktuj się z nami! Chętnie odpowiemy na wszelkie dodatkowe wątpliwości.
+                        </p>
+                    </div>
+
+                    <button class="link variant2 d-block mx-auto" aria-controls="FAQ-modul-e-szlaki-contact-modal">
+                        Zadaj pytanie
+                    </button>
+
+                </div>
+
+
+            </div>
+
+            <div id="FAQ-modul-e-szlaki-contact-modal" data-modal-first-focus="#faq-contact-input-name" class="modal modal--animate-slide-up js-modal">
+                <div class="modal__content modern-card" role="alertdialog"
+                    aria-labelledby="FAQ-modul-e-szlaki-contact-modal-title">
+                    <div class="shape-blob" aria-hidden="true"></div>
+                    <div class="shape-blob one" aria-hidden="true"></div>
+                    <div class="shape-blob two" aria-hidden="true"></div>
+
+                    <div class="modal__header pb-2">
+                        <p id="FAQ-modul-e-szlaki-contact-modal-title" class="faq-small-header">Skontaktuj się z nami!</p>
+
+                        <button class="modal__close-btn modal__close-btn--inner js-modal__close js-tab-focus">
+                            <span class="sr-only">Zamknij</span>
+                            <img class="modal__close-btn-icon" src="./images/close-icon.svg" alt="x" aria-hidden="true">
+                        </button>
+                    </div>
+
+                    <form class="faq-contact-form">
+
+                        <div class="faq-form-field">
+                            <input class="floating-label-control faq-form-control " type="text" name="faq-contact-name"
+                                id="faq-contact-input-name" placeholder="Imię Nazwisko">
+                            <label class="floating-label" for="faq-contact-input-name">Imię Nazwisko</label>
+
+                            <i class="faq-icon fa-solid fa-id-card"></i>
+                        </div>
+
+                        <div class="faq-form-field">
+                            <input class="floating-label-control faq-form-control " type="email"
+                                name="faq-contact-email" id="faq-contact-input-email" placeholder="Adres Email">
+                            <label class="floating-label" for="faq-contact-input-email">Adres Email</label>
+
+                            <i class="faq-icon fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div class="faq-contact-form-question faq-form-field">
+                            <label class="floating-label" for="faq-contact-input-desc">Treść pytania</label>
+                            <textarea rows="10" class="floating-label-control faq-form-control " name="faq-contact-desc"
+                                id="faq-contact-input-desc" placeholder="Maksymalnie 500 znaków"></textarea>
+                        </div>
+
+                        <div class="custom-checkbox-group">
+                            <input class="custom-checkbox-input" name="faq-contact-privace-policy" type="checkbox"
+                                id="faq-contact-input-privace-policy">
+                            <label class="custom-checkbox-label" for="faq-contact-input-privace-policy">
+                                Akceptuje warunki polityki prywatności
+                            </label>
+                        </div>
+
+                        <button type="submit" class="faq-contact-form-submit link variant2">
+                            Wyślij
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="faq-contact-form-toast" style="display: none;">
+                <div class="icon-wrapper">
+                    <div class="icon"></div>
+                </div>
+                <div class="toast-message">
+                    <p class="toast-message-title">Status</p>
+                    <p class="toast-message-text">Descriptive Message.</p>
+                </div>
+                <button class="toast-close"><span class="sr-only">Zamknij</span></button>
+                <div class="timer"></div>
+            </div>
+        </section>
+        <!-- FAQ END -->
+    </main>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
