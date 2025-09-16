@@ -1,0 +1,20 @@
+@use "../../base/variables" as *;
+@use "../../functions/toRem" as *;
+
+#user-achievements-module {
+  .profile-layout {
+    .stats-card {
+      grid-area: stats;
+      padding-bottom: 3rem;
+    }
+
+    .statistics-card-right-content {
+      @media (max-width: $content-breakpoint-phone) {
+        flex-direction: column;
+      }
+      @media (max-width: $content-breakpoint-phone-large) {
+        gap: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+@use "../base/variables" as *;
+@use "../functions/toRem" as *;
+
+#user-achievements-module {
+  .badge-card {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 0.75rem; 
+    border-radius: 15px; 
+    background: var(--badge-color-opacity);
+    background: linear-gradient(to right, var(--badge-color-opacity), var(--badge-color));
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: var(--font-color); 
+    gap: 1rem;
+
+    .shine-effect {
+      display: none;
+    }
+
+    &.unlocked {
+      .shine-effect {
+        display: block;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 6rem;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.175); 
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 0); 
+                clip-path: polygon(0 0, 0 100%, 100% 0);
+      }
+
+      &:hover,
+      &:focus,
+      &:active { 
+        .badge-icon {
+          transform: translateY(-0.5rem);
+          box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+        }
+      }
+    }
+
+    .badge-icon-wrapper {
+      position: relative;
+      flex-shrink: 0;
+      width: toRem(65);
+      height: toRem(65);
+    }
+
+    .badge-icon {
+      position: relative;
+      // z-index: 2;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 8px;
+      -o-object-fit: cover;
+         object-fit: cover;
+      will-change: transform, box-shadow;
+    }
+
+    .badge-info {
+      flex-grow: 1;
+    }
+
+    .badge-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.25rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      gap: 0.5rem;
+    }
+
+    .badge-level {
+      color: #bc1414;
+      font-weight: bold;
+    }
+
+    .badge-description {
+      color: var(--font-color-gray);
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    .rarity-badge {
+      position: absolute;
+      top: -0.15rem;
+      right: 0.5rem;
+      max-width: 2.25rem;
+    }
+
+    @-webkit-keyframes shine {
+      0% {
+        transform: translateX(-100%) translateY(-100%);
+      }
+      20%,
+      100% {
+        transform: translateX(100%) translateY(100%);
+      }
+    }
+
+    @keyframes shine {
+      0% {
+        transform: translateX(-100%) translateY(-100%);
+      }
+      20%,
+      100% {
+        transform: translateX(100%) translateY(100%);
+      }
+    }
+
+    @-webkit-keyframes shineSlide {
+      0% {
+        left: toRem(-200);
+      }
+      16.67% {
+        left: calc(100% + toRem(200));
+      }
+      100% {
+        left: calc(100% + toRem(200));
+      }
+    }
+
+    @keyframes shineSlide {
+      0% {
+        left: toRem(-200);
+      }
+      16.67% {
+        left: calc(100% + toRem(200));
+      }
+      100% {
+        left: calc(100% + toRem(200));
+      }
+    }
+  }
+
+  .badges-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 0.5rem;
+  }
+
+  .badges-tiles {  
+    --col-number: 2;
+    --tiles-size-min: 7.5rem;
+    --tiles-size-max: 12.5rem; 
+
+    display: grid;
+    grid-template-columns: repeat(var(--col-number), minmax(var(--tiles-size-min), var(--tiles-size-max)));  
+    justify-content: center;  
+    gap: 0.5rem;
+    list-style: none; 
+
+    @media (min-width: $content-breakpoint-phone-large) {
+      --col-number: 3;
+    }
+    @media (min-width: $content-breakpoint-tablet-small) {
+      --col-number: 4; 
+    }
+
+    @media (min-width: $content-breakpoint-tablet) {
+      --col-number: 5;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: $content-breakpoint-desktop) {
+      --col-number: 6;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: $content-breakpoint-desktop-large) {
+      gap: 1.75rem;
+    }
+
+    &-for-achievement-details {
+      grid-template-columns: 1fr;
+
+      .badge-card {  
+        width: 100%;
+        max-width: var(--tiles-size-max);
+      }
+    }
+
+    &-for-cabin { 
+      display: flex;
+      align-items: center;
+
+      @media (min-width: $content-breakpoint-tablet-large) {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+
+      .badge-card { 
+        width: 100%;
+        max-width: var(--tiles-size-max);
+      }
+    }
+
+    .badge-card { 
+      display: flex;
+      position: relative; 
+      border-radius: 50%; 
+      background-color: rgba(0, 0, 0, 0.3); 
+
+      .shine-effect {
+        border-radius: 50%; 
+      }
+
+      &::after { 
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    .badge-icon-wrapper {
+      width: 100%;
+      height: auto;
+    } 
+
+    .badge-level,
+    .badge-title,
+    .badge-description,
+    .rarity-badge {
+      display: none; 
+    }
+  }
+}

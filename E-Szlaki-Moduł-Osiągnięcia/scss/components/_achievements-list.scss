@@ -1,0 +1,346 @@
+@use "../base/variables" as *;
+@use "../functions/toRem" as *;
+
+#user-achievements-module {
+  .achievement-card {
+    &.locked {
+      pointer-events: none;
+    }
+
+    &.achieved {
+      &:hover,
+      &:focus,
+      &:active {
+        .achievement-card-icon { 
+          box-shadow: 0 0 10px var(--yellow), 0 0 20px var(--yellow);
+        }
+      }
+
+      .achievement-card-category-icon {
+        -webkit-filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.34));
+                filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.34));
+      }
+    }
+
+    &-category { 
+      position: absolute;
+      top: 0.35rem;
+      right: 0.35rem;
+
+      &-icon { 
+        max-width: toRem(50);
+      }
+      
+    } 
+
+    &-icon {
+      max-width: 100%;
+      transition: 0.35s ease;
+      border: 0.4rem solid var(--light-gray);
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    &.achieved {
+      .achievement-card-icon {
+        border-color: var(--yellow);
+        box-shadow: 0 0 5px var(--yellow);
+      }
+    }
+  }
+
+  .achievements-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    gap: 1.25rem;
+
+    @media (min-width: $content-breakpoint-phone) {
+      gap: 2rem; 
+    }
+
+    .achievement-card {
+      display: flex;
+      position: relative;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem; 
+      transition: background-color 0.3s ease-in;
+      border-radius: 15px;
+      background-color: var(--background-50);
+      box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+      color: var(--font-color);
+      gap: 0.5rem;   
+
+      &-bg { 
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(to right, transparent, var(--category-color-opacity));
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -0.5rem;
+        right: 0;
+        min-height: 3.5rem;
+        background-image: url(../images/banner.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        aspect-ratio: 1/1.275;
+        -webkit-filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.44));
+                filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.44));
+      }
+
+      @media (min-width: $content-breakpoint-phone) {
+        &::before {
+          min-height: 4.5rem;
+        }
+      }
+
+      @media (min-width: $content-breakpoint-tablet) {
+        padding-left: 0.65rem;
+        gap: 1.5rem;
+
+        &::before { 
+          top: -0.5rem;
+          right: auto;
+          left: 0;
+          min-height: calc(100% + 1.7rem); 
+        }
+      }
+
+      &:hover, &:focus, &:active {
+        background-color: var(--background);
+      } 
+
+      &.achieved {  
+        &::before {
+          background-image: url(../images/banner-achieved.svg);
+        }
+      }
+
+      &-achieved-date { 
+        color: var(--font-color-gray);
+        font-size: 0.9rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px var(--background);
+        
+        @media (min-width: $content-breakpoint-tablet) {
+          position: absolute;
+          right: 0.75rem;
+          bottom: 0.75rem;
+        }
+      }
+
+      &-category {
+        display: flex;
+        position: static;
+        align-items: center;
+        gap: 0.25rem;
+
+        @media (min-width: $content-breakpoint-tablet) {
+          position: absolute; 
+        }
+
+        &-name {
+          font-weight: bold;
+          letter-spacing: 1px;
+          text-shadow: 1px 1px var(--background);
+        }
+
+        &-icon { 
+          max-width: toRem(30); 
+
+          @media (min-width: $content-breakpoint-tablet) {
+            max-width: toRem(50); 
+          }
+        }
+
+      } 
+
+      &-icon {
+        border-width: 0.2rem;
+      }
+
+      &-icon-wrapper { 
+        position: relative;
+        max-width: toRem(75);
+
+        @media (min-width: $content-breakpoint-phone) {
+          max-width: toRem(100);
+        }
+
+        @media (min-width: $content-breakpoint-tablet) {
+          max-width: toRem(75);
+        }
+      }
+
+      &-info {
+        --info-flex-gap: 0.5rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--info-flex-gap); 
+      } 
+
+      &-title {  
+        font-size: 1rem;
+        font-weight: bold; 
+        line-height: 1; 
+
+        @media (min-width: $content-breakpoint-tablet) {
+          font-size: 1.25rem;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: toRem(4);
+          margin-top: var(--info-flex-gap);
+          border-radius: 100vmax;
+          background: linear-gradient(to right, var(--category-color), transparent); 
+        }
+      }
+
+      &-desc {
+        color: var(--font-color-gray);
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .achievements-tiles { 
+    --col-number: 1;
+    --tiles-size-min: 5.5rem;
+    --tiles-size-max: 15rem; 
+
+    display: grid;
+    grid-template-columns: repeat(var(--col-number), minmax(var(--tiles-size-min), var(--tiles-size-max)));  
+    justify-content: center;   
+    gap: 0.55rem;
+    list-style: none;
+
+    @media (min-width: $content-breakpoint-phone) {
+      --col-number: 2;  
+    }
+    @media (min-width: $content-breakpoint-phone-large) {
+      --col-number: 3;
+      gap: 1rem;
+    }
+    @media (min-width: $content-breakpoint-tablet) {
+      --col-number: 4;
+      gap: 1.25rem;
+    }
+    @media (min-width: $content-breakpoint-desktop) {
+      --col-number: 5;
+      gap: 1.5rem;
+    }  
+    @media (min-width: $content-breakpoint-desktop-large) {
+      --col-number: 6; 
+    } 
+
+    .achievement-card {
+      display: flex;
+      position: relative;  
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1.5rem;
+      aspect-ratio: 1/1.275;
+      contain-intrinsic-size: 0 300px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        min-width: 100%;
+        height: 100%; 
+        transition: -webkit-filter 0.3s ease;
+        transition: filter 0.3s ease;
+        transition: filter 0.3s ease, -webkit-filter 0.3s ease;
+        background-image: url(../images/banner.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+                filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+        will-change: filter;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        &::before {
+          -webkit-filter: drop-shadow(3px 8px 5px rgb(0 0 0 / 0.7));
+                  filter: drop-shadow(3px 8px 5px rgb(0 0 0 / 0.7));
+        }
+      }
+
+      &.achieved {
+        &::before {
+          background-image: url(../images/banner-achieved.svg);
+        }
+      }
+
+      &-category {  
+  
+        &-name { 
+          display: none;
+        }
+        
+      } 
+
+      &-achieved-date {
+        padding-block: 0.4rem;
+        color: var(--very-light-gray);
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      &-icon-wrapper {
+        position: relative;
+        max-width: 50%;
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        max-width: 22ch;
+        text-align: center;
+      }
+
+      &-title {
+        order: 2;
+        max-width: 15ch; 
+        color: #fff;
+        font-size: 1.15rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      &-desc {
+        display: none;
+      }
+    }
+
+    // &.achievements-tiles-for-profile {
+    //   display: flex;
+    //   flex-wrap: wrap;
+
+    //   .achievement-card {
+    //     width: 100%;
+    //     max-width: toRem(250);
+    //   }
+    // }
+  }
+}

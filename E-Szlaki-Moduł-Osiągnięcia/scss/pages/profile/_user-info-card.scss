@@ -1,0 +1,75 @@
+@use "../../base/variables" as *;
+@use "../../functions/toRem" as *;
+
+#user-achievements-module {
+  .profile-layout {
+    .user-info-card {
+      grid-area: user-info;
+
+      .user-info {
+        padding-bottom: toRem(20);
+
+        .user-name {
+          margin-bottom: toRem(10);
+          color: var(--font-color);
+          letter-spacing: 1px;
+        }
+
+        .user-rank {
+          display: inline-flex;
+          position: relative;
+          align-items: center;
+          justify-content: center;
+          width: -webkit-max-content;
+          width: -moz-max-content;
+          width: max-content;
+          margin-bottom: toRem(20);
+          padding: 0.25rem 0.75rem;
+          border-radius: 0.5rem;
+          box-shadow: #00000081 0px 2px 7px;
+          color: var(--green);
+          font-size: 1.1rem;
+          font-weight: 600;
+          gap: 0.5rem;
+        }
+
+        .user-description {
+          margin-bottom: 0;
+          color: var(--text-secondary);
+          line-height: 1.6;
+        }
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(toRem(200), 1fr));
+        gap: 1rem;
+
+        @media (min-width: $content-breakpoint-tablet) {
+          gap: 3rem;
+        }
+      }
+
+      .stat-tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .stat-value {
+        margin-bottom: toRem(4);
+        color: #fff;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .stat-label {
+        color: var(--font-color-gray);
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

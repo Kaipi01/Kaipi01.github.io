@@ -1,0 +1,49 @@
+@use "../../base/variables" as *;
+@use "../../functions/toRem" as *;
+
+@use "./cabinet-card";
+@use "./achievements-card";
+@use "./user-avatar-card";
+@use "./user-info-card";
+@use "./stats-card";
+
+#user-achievements-module {
+  .profile-layout {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+      "error"
+      "avatar"
+      "user-info"
+      "badges"
+      "items"
+      "achievements"
+      "stats";
+
+    @media (min-width: $content-breakpoint-tablet-small) {
+      grid-template-areas:
+        "error error error"
+        "avatar user-info user-info"
+        "badges badges badges"
+        "items items items"
+        "achievements achievements achievements"
+        "stats stats stats";
+      grid-template-columns: repeat(3, 1fr);
+    } 
+
+    @media (min-width: $content-breakpoint-desktop-small) {
+      grid-template-areas:
+        "error error error error error"
+        "avatar user-info user-info user-info user-info"
+        "badges badges badges badges badges"
+        "items items items items items"
+        "achievements achievements achievements stats stats";
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+    }
+
+    .error-card {
+      grid-area: error;
+    }
+  }
+}

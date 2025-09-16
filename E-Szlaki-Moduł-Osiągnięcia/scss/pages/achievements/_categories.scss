@@ -1,0 +1,71 @@
+@use "../../base/variables" as *;
+@use "../../functions/toRem" as *;
+
+#user-achievements-module {
+  .categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: toRem(150);
+
+    @media (min-width: $content-breakpoint-desktop) {
+      gap: 0.75rem;
+    }
+
+    .category-card {
+      display: flex;
+      position: relative;
+      z-index: 4;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 5.5rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      aspect-ratio: 1/1;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='120' height='140' viewBox='0 0 120 140' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 0C62.5 0 65 1 67 2.5L115.5 32.5C117.5 34 119 36.5 119 39.5V100.5C119 103.5 117.5 106 115.5 107.5L67 137.5C65 139 62.5 140 60 140C57.5 140 55 139 53 137.5L4.5 107.5C2.5 106 1 103.5 1 100.5V39.5C1 36.5 2.5 34 4.5 32.5L53 2.5C55 1 57.5 0 60 0Z' fill='black'/%3E%3C/svg%3E");
+      mask-image: url("data:image/svg+xml,%3Csvg width='120' height='140' viewBox='0 0 120 140' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 0C62.5 0 65 1 67 2.5L115.5 32.5C117.5 34 119 36.5 119 39.5V100.5C119 103.5 117.5 106 115.5 107.5L67 137.5C65 139 62.5 140 60 140C57.5 140 55 139 53 137.5L4.5 107.5C2.5 106 1 103.5 1 100.5V39.5C1 36.5 2.5 34 4.5 32.5L53 2.5C55 1 57.5 0 60 0Z' fill='black'/%3E%3C/svg%3E");
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      background-color: var(--gray);
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+
+      * {
+        pointer-events: none;
+      }
+
+      @media (min-width: $content-breakpoint-phone) {
+        max-width: 7.5rem;
+      }
+
+      @media (min-width: $content-breakpoint-desktop) {
+        max-width: 9rem;
+      }
+
+      &.active {
+        background-color: rgba(255, 215, 0);
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        transform: translateY(-0.35rem);
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+      }
+
+      .category-image {
+        width: 90%;
+      }
+    }
+  }
+}

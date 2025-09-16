@@ -1,0 +1,15 @@
+@use "../../base/variables" as *;
+@use "../../functions/toRem" as *;
+
+#user-achievements-module {
+  .profile-layout {
+    .small-header {
+      padding-bottom: 2rem;
+    }
+
+    .achievements-card {
+      grid-area: achievements;
+      min-height: toRem(525);
+    }
+  }
+}

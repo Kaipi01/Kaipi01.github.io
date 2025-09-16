@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moduł Osiągnięcia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./dist/main.css">
+</head>
+
+<body>
+
+    <div id="user-achievements-module">
+
+        <div class="main-layout modern-card container">
+
+            <!-- MAIN NAVIGATION START -->
+            <nav role="navigation" data-main-navigation class="main-navigation">
+                <ul data-main-navigation-list class="main-navigation-list">
+                    <li class="main-navigation-item">
+                        <a data-main-navigation-link="profil" class="main-navigation-link" href="#profil">
+                            <img src="./images/user-profile-icon.svg" alt="" aria-hidden="true"
+                                class="main-navigation-link-icon">
+                            <span class="main-navigation-link-text">Profil</span>
+                        </a>
+                    </li>
+                    <li class="main-navigation-item">
+                        <a data-main-navigation-link="osiagniecia" class="main-navigation-link" href="#osiagniecia">
+                            <img src="./images/trophy-icon.svg" alt="" aria-hidden="true"
+                                class="main-navigation-link-icon">
+                            <span class="main-navigation-link-text">Osiągnięcia</span>
+                        </a>
+                    </li>
+                    <li class="main-navigation-item">
+                        <a data-main-navigation-link="osiagniecia" class="main-navigation-link" href="#nagrody">
+                            <img src="./images/award-icon.svg" alt="" aria-hidden="true"
+                                class="main-navigation-link-icon">
+                            <span class="main-navigation-link-text">Nagrody</span>
+                        </a>
+                    </li>
+                </ul>
+                <theme-switcher role="button" aria-label="Przełącznik motywu" data-id="theme-switcher"></theme-switcher>
+            </nav>
+            <!-- MAIN NAVIGATION END -->
+
+            <div data-main-content class="main-content-wrapper">
+
+                <!-- USER INFO START -->
+                <section data-content-page="#profil" id="profil" class="panel panel-padding profile-layout">
+
+                    <div data-error-card class="error-card"></div>
+
+                    <div class="user-avatar-card modern-card" style="background-image: url(./images/avatar.webp)">
+                        <svg class="polygon polygon1" preserveAspectRatio="none" viewBox="0 0 100 100">
+                            <polygon points="0 20, 100 20, 0 100" opacity=".65"></polygon>
+                        </svg>
+                        <svg class="polygon polygon2" preserveAspectRatio="none" viewBox="0 0 100 120">
+                            <polygon points="0 20, 100 20, 15 120" opacity=".8"></polygon>
+                        </svg>
+
+                        <p class="level-info">Poziom 96</p>
+
+                        <!-- <div class="experience-info">
+                                <p class="current-exp">Doświadczenie 19982</p>
+                                <p class="next-level">Kolejny poziom - 20500</p>
+                            </div> -->
+                    </div>
+
+                    <div class="user-info-card modern-card">
+
+                        <div class="user-info">
+                            <p class="user-name big-header">Magnus Carlsen</p>
+                            <span data-user-title style="display: none;" class="user-rank">
+                                <i class="fa-solid fa-award"></i>Początkujący Podróżnik
+                            </span>
+                            <p class="user-description">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit dolore ut quae eum
+                                ducimus voluptatum, id accusantium ipsum qui fuga cupiditate provident quibusdam maxime
+                                dicta molestiae itaque.
+                            </p>
+                        </div>
+
+                        <div class="stats-grid">
+
+                            <div class="stat-tile">
+                                <div class="blob-card">
+                                    <p data-ranking-number class="stat-value">#4</p>
+                                </div>
+                                <p class="stat-label">Ranking</p>
+                            </div>
+
+                            <div class="stat-tile">
+                                <div class="blob-card">
+                                    <p data-achievements-number class="stat-value">59</p>
+                                </div>
+                                <p class="stat-label">Odblokowane osiągnięcia</p>
+                            </div>
+
+                            <div class="stat-tile">
+                                <div class="blob-card">
+                                    <p data-badges-number class="stat-value">12</p>
+                                </div>
+                                <p class="stat-label">Liczba odznak</p>
+                            </div>
+
+                            <div class="stat-tile">
+                                <div class="blob-card">
+                                    <p data-items-number class="stat-value">114</p>
+                                </div>
+                                <p class="stat-label">Liczba przedmiotów</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="cabinet-badges-card modern-card">
+                        <p class="small-header">Wyróżnione Odznaki</p>
+                        <ul data-badges-list class="badges-tiles badges-tiles-for-cabin"></ul>
+                    </div>
+
+                    <div class="cabinet-items-card modern-card">
+                        <p class="small-header">Wyróżnione Przedmioty</p>
+                        <ul data-items-list class="items-tiles items-tiles-for-cabin"></ul>
+                    </div>
+
+                    <div class="achievements-card modern-card">
+
+                        <p class="small-header">Naważniejsze osiągnięcia</p>
+
+                        <ul data-achievements-list class="achievements-list achievement-list-for-profile"> 
+
+                    </div>
+
+                    <div class="stats-card modern-card">
+
+                        <figure data-pie-chart data-title="Statystyki Osiągnięć"
+                            class="custom-pie-chart statistics-card-right-content" aria-labelledby="pie-chart-desc">
+                            <div data-pie-chart-appearance class="pie-chart donut" aria-live="polite"></div>
+                            <figcaption id="pie-chart-desc" class="sr-only">
+                                <span>Wykres przedstawia procentowy podział zdobytych osiągnięć</span>
+                            </figcaption>
+                        </figure>
+
+                        <div data-progress-bar="achievements-points" class="animated-progress"> 
+                            <div class="animated-progress-bar">
+                                <div class="animated-progress-per" per="0"></div>
+                            </div>
+
+                            <div class="animated-progress-info">
+                                <div data-name class="animated-progress-name">Punkty Osiągnięć</div>
+                                <div class="animated-progress-stats">
+                                    <span data-current-value></span> / <span data-max-value></span>
+                                </div> 
+                            </div> 
+                        </div>
+
+                        <div data-progress-bar="achievements-number" class="animated-progress"> 
+                            <div class="animated-progress-bar">
+                                <div class="animated-progress-per" per="0"></div>
+                            </div>
+
+                            <div class="animated-progress-info">
+                                <div class="animated-progress-name">Zdobyte Osiągnięcia</div>
+                                <div class="animated-progress-stats">
+                                    <span data-current-value></span> / <span data-max-value></span>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div data-progress-bar="badges" class="animated-progress"> 
+                            <div class="animated-progress-bar">
+                                <div class="animated-progress-per" per="0"></div>
+                            </div>
+
+                            <div class="animated-progress-info">
+                                <div class="animated-progress-name">Zdobyte Odznaki</div>
+                                <div class="animated-progress-stats">
+                                    <span data-current-value></span> / <span data-max-value></span>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div data-progress-bar="items" class="animated-progress"> 
+                            <div class="animated-progress-bar">
+                                <div class="animated-progress-per" per="0"></div>
+                            </div>
+
+                            <div class="animated-progress-info">
+                                <div class="animated-progress-name">Zdobyte Przedmioty</div>
+                                <div class="animated-progress-stats">
+                                    <span data-current-value></span> / <span data-max-value></span>
+                                </div>
+                            </div> 
+                        </div>
+
+                    </div>
+
+                </section>
+                <!-- USER INFO END -->
+
+                <!-- ACHIEVEMENTS START -->
+                <section data-content-page="#osiagniecia" id="osiagniecia" class="panel achievements-layout">
+
+                    <div class="achievements-layout-content panel-padding">
+
+                        <div data-bg class="bg-test" aria-hidden="true"></div>
+
+                        <div class="categories-card">
+                            <div data-categories class="categories-container"></div>
+                        </div>
+
+                        <div class="tab-navigation display-data-modes">
+                            <button role="button" data-change-display-mode="tiles"
+                                class="tab-button link small variant2 active">
+                                <span class="sr-only">Kafelki</span> <i class="fa-solid fa-border-all"></i>
+                            </button>
+                            <button role="button" data-change-display-mode="list"
+                                class="tab-button link small variant2">
+                                <span class="sr-only">Lista</span> <i class="fa-solid fa-list"></i>
+                            </button>
+                            <button role="button" data-change-display-mode="tree"
+                                class="tab-button link small variant2">
+                                <span class="sr-only">Drzewo</span> <i class="fa-solid fa-sitemap"></i>
+                            </button>
+                        </div>
+
+                        <div data-achievements-container class="achievement-tree-wrapper">
+
+                            <div data-achievements-list-container class="achievement-list-container">
+                                <div class="actions-card modern-card">
+
+                                    <custom-popover data-class="custom-select-green">
+                                        <template data-class="custom-select-green-styled"
+                                            slot="button-text">Filtruj</template>
+                                        <template data-class="custom-select-green-options" slot="content">
+
+                                            <span data-filter-achievements>
+                                                <label class="custom-switch">
+                                                    <input type="checkbox" name="only-unlocked">
+                                                    <span class="toggle"><span class="toggle--handler"></span></span>
+                                                    <span class="label-text">Tylko Odblokowane</span>
+                                                </label>
+
+                                                <label class="custom-switch">
+                                                    <input type="checkbox" name="only-no-unlocked">
+                                                    <span class="toggle"><span class="toggle--handler"></span></span>
+                                                    <span class="label-text">Tylko Nieodblokowane</span>
+                                                </label> 
+
+                                                <label class="custom-switch">
+                                                    <input type="checkbox" name="only-hard">
+                                                    <span class="toggle"><span class="toggle--handler"></span></span>
+                                                    <span class="label-text">Tylko Trudne</span>
+                                                </label>
+
+                                                <label class="custom-switch">
+                                                    <input type="checkbox" name="only-easy">
+                                                    <span class="toggle"><span class="toggle--handler"></span></span>
+                                                    <span class="label-text">Tylko Łatwe</span>
+                                                </label>
+                                            </span>
+
+                                        </template>
+                                    </custom-popover>
+
+                                    <select data-sort-data data-custom-select data-class-name="custom-select-green">
+                                        <option value="hide">Sortuj</option>
+                                        <option value="achieved-true">Osiągnięte na początku</option>
+                                        <option value="achieved-false">Nieosiągnięte na początku</option> 
+                                        <option value="difficulty-asc">Od najłatwiejszych</option>
+                                        <option value="difficulty-desc">Od najtrudniejszych</option>
+                                        <option value="name-asc">Nazwa: A – Z</option>
+                                        <option value="name-desc">Nazwa: Z – A</option>
+                                    </select>
+
+                                    <custom-search-form data-id="upt-search-input-for-achievements"
+                                        data-for-panel="achievements"></custom-search-form>
+
+                                </div>
+
+                                <ul data-achievements-list class="achievements-data achievements-tiles">
+                            </div>
+
+                            <div class="achievement-tree-content">
+                                <div style="display: none;" data-tree-container class="achievement-container"></div>
+                            </div>
+
+                            <div data-achievement-tooltip class="tooltip-achievement-card" style="display: none;"></div>
+                        </div>
+
+                    </div>
+
+                </section>
+                <!-- ACHIEVEMENTS END -->
+
+                <!-- AWARDS START -->
+                <section data-tab-content data-content-page="#nagrody" id="nagrody"
+                    class="panel panel-padding awards-layout">
+
+                    <nav class="tab-navigation awards-navigation" role="tablist" aria-label="Nagrody Nawigacja">
+                        <button data-tab-button class="tab-button link variant2" role="tab" aria-selected="true"
+                            aria-controls="odznaki-panel">
+                            Odznaki <i class="fa-solid fa-award"></i>
+                        </button>
+                        <button data-tab-button class="tab-button link variant2" role="tab" aria-selected="false"
+                            aria-controls="przedmioty-panel">
+                            Przedmioty <i class="fa-solid fa-ring"></i>
+                        </button>
+                    </nav>
+
+                    <div class="actions-card modern-card">
+
+                        <custom-popover data-class="custom-select-green">
+                            <template data-class="custom-select-green-styled" slot="button-text">Filtruj</template>
+                            <template data-class="custom-select-green-options" slot="content">
+
+                                <span data-filter-awards>
+                                    <label class="custom-switch">
+                                        <input type="checkbox" name="only-unlocked">
+                                        <span class="toggle"><span class="toggle--handler"></span></span>
+                                        <span class="label-text">Tylko Odblokowane</span>
+                                    </label>
+
+                                    <label class="custom-switch">
+                                        <input type="checkbox" name="only-no-unlocked">
+                                        <span class="toggle"><span class="toggle--handler"></span></span>
+                                        <span class="label-text">Tylko Nieodblokowane</span>
+                                    </label>
+
+                                    <label class="custom-switch">
+                                        <input type="checkbox" name="only-high-value">
+                                        <span class="toggle"><span class="toggle--handler"></span></span>
+                                        <span class="label-text">Tylko Wysoko Wartościowe</span>
+                                    </label>
+
+                                    <label class="custom-switch">
+                                        <input type="checkbox" name="only-low-value">
+                                        <span class="toggle"><span class="toggle--handler"></span></span>
+                                        <span class="label-text">Tylko Nisko Wartościowe</span>
+                                    </label>
+
+                                    <label class="custom-switch">
+                                        <input type="checkbox" name="only-highlighted">
+                                        <span class="toggle"><span class="toggle--handler"></span></span>
+                                        <span class="label-text">Tylko Wyróżnione</span>
+                                    </label>
+
+                                    <label class="custom-switch">
+                                        <input type="checkbox" name="only-no-highlighted">
+                                        <span class="toggle"><span class="toggle--handler"></span></span>
+                                        <span class="label-text">Tylko Nie Wyróżnione</span>
+                                    </label>
+                                </span>
+
+                            </template>
+                        </custom-popover>
+
+                        <select data-sort-data data-custom-select data-class-name="custom-select-green">
+                            <option value="hide">Sortuj</option>
+                            <option value="unlocked-true">Odblokowane na początku</option>
+                            <option value="unlocked-false">Nieodblokowane na początku</option>
+                            <option value="unlocked-date-asc">Zdobyte najwcześniej</option>
+                            <option value="unlocked-date-desc">Zdobyte najpóźniej</option>
+                            <option value="value-asc">Od najniższej wartości</option>
+                            <option value="value-desc">Od najwyższej wartości</option>
+                            <option value="name-asc">Nazwa: A – Z</option>
+                            <option value="name-desc">Nazwa: Z – A</option>
+                        </select>
+
+                        <custom-search-form data-id="upt-search-input-for-awards"
+                            data-for-panel="awards"></custom-search-form>
+
+                    </div>
+
+                    <div class="modern-card">
+
+                        <div class="tab-navigation display-data-modes">
+                            <button role="button" data-change-display-mode="tiles"
+                                class="tab-button link small variant2 active">
+                                <span class="sr-only">Kafelki</span> <i class="fa-solid fa-border-all"></i>
+                            </button>
+                            <button role="button" data-change-display-mode="list"
+                                class="tab-button link small variant2">
+                                <span class="sr-only">Lista</span> <i class="fa-solid fa-list"></i>
+                            </button>
+                        </div>
+
+                        <div data-tab-panel="badges" class="tab-panel awards-panel badges-panel active" id="odznaki-panel"
+                            role="tabpanel" aria-labelledby="odznaki">
+
+                            <p class="awards-number-stats">
+                                Zdobyto: <span class="value" data-current-badges-number>11</span> / <span class="value"
+                                    data-max-badges-number>120</span>
+                            </p>
+
+                            <ul data-badges-list class="data-badges-list badges-tiles"></ul>
+                        </div>
+
+                        <div data-tab-panel="items" class="tab-panel awards-panel items-panel" id="przedmioty-panel" role="tabpanel"
+                            aria-labelledby="przedmioty">
+
+                            <p class="awards-number-stats">
+                                Zdobyto: <span class="value" data-current-items-number>31</span> / <span class="value"
+                                    data-max-items-number>240</span>
+                            </p>
+
+                            <ul data-items-list class="data-items-list items-tiles"></ul>
+
+
+                        </div>
+                    </div>
+
+                </section>
+                <!-- AWARDS END -->
+            </div>
+
+        </div> 
+
+        <!-- BADGE AWARD DEATILS MODAL START -->
+        <custom-modal data-modal-id="user-achievements-module-badge-details-modal"
+            data-modal-content-class="badge-details">
+            <template slot="modal-title">Informację o odznace</template>
+            <template slot="modal-content">
+                <div class="badge-details-content">
+
+                    <div class="badge-details-image-container">
+                        <div id="card-3D-test" class="card-3D-wrapper">
+                            <div class="card-3D">
+                                <span data-shine class="shine" aria-hidden="true"></span>
+                                <img data-badge-image class="image" src="./icons/badge/badge-16.png"></img>
+                            </div>  
+                        </div> 
+                        <highlight-button></highlight-button>
+                    </div>
+
+                    <div class="badge-details-card badge-details-info">
+                        <p data-badge-name class="badge-details-name"></p>
+                        <p data-badge-unlocked-date class="badge-details-unlocked-date"></p>
+                        <p data-badge-rarity class="badge-details-rarity"></p>
+                        <p data-badge-desc class="badge-details-description"></p>
+
+                        <div class="badge-details-related">
+                            <p>Powiązane Osiągnięcia:</p>
+                            <ul data-badge-related class="related-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </custom-modal>
+        <!-- BADGE AWARD DEATILS MODAL END -->
+
+        <!-- ITEM AWARD DEATILS MODAL START -->
+        <custom-modal data-modal-id="user-achievements-module-item-details-modal"
+            data-modal-content-class="item-details">
+
+            <template slot="modal-title">Szczegóły o przedmiocie</template>
+
+            <template slot="modal-content"> 
+
+                <div data-item-details-content class="item-details-content">
+
+                    <div class="item-details-card item-details-image-container shine-animation tooltip">
+                        <span aria-hidden="true" class="shine-effect"></span>
+                        <img data-item-image class="item-details-image" src="./icons/items/item-102.png"></img> 
+                        <highlight-button></highlight-button>
+                    </div>
+
+                    <div class="item-details-card item-details-main-info">
+                        <p data-item-name class="item-details-name"></p>
+                        <!-- <p data-item-type class="item-details-type"></p> -->
+
+                        <p data-item-rarity class="item-details-rarity"></p>
+
+                        <p data-item-desc class="item-details-description"></p>
+                    </div>
+
+                    <div class="item-details-card item-details-additional-info">
+
+                       <div>
+                            <div class="item-details-value">
+                                <p class="item-details-value-title">Wartość</p>
+                                <span data-item-value class="item-details-value-number"></span>
+                            </div>
+
+                            <blockquote data-item-rarity-quote class="item-details-rarity-quote"></blockquote>
+                       </div>
+
+                        <p data-item-unlocked-date class="item-details-unlocked-date"></p>
+                    </div>
+
+                    <div data-item-stats class="item-details-card item-details-stats"></div>
+                </div>
+
+            </template>
+
+        </custom-modal>
+        <!-- ITEM AWARD DEATILS MODAL END -->
+
+        <custom-modal data-modal-id="user-achievements-module-reward-modal" data-modal-content-class="reward-details">
+            <template slot="modal-title">Szczegóły o nagrodzie</template>
+
+            <template slot="modal-content">
+
+              <div data-main-content class="reward-main-content">
+                <p data-reward-title class="reward-title modern-card">Gratulacje zdobyłeś nowy przedmiot!</p>
+
+                <div id="chest-wrap">
+                    <img data-image class="reward-image" src="./icons/items/item-101.png" alt="">
+
+                    <svg data-reward-chest xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 -50 500 400" id="chest" class="shake-chest">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect class="cls-1" x="115.28" y="168.67" width="275.85" height="130.18" />
+                            </clipPath>
+                            <clipPath id="clip-path-2">
+                                <rect class="cls-2" x="45.02" y="167.49" width="410.31" height="44.75" rx="19.76" />
+                            </clipPath>
+                            <clipPath id="clip-path-3">
+                                <rect class="cls-3" x="61.56" y="184.2" width="13.99" height="73.92" rx="7" />
+                            </clipPath>
+                            <clipPath id="clip-path-4">
+                                <rect class="cls-3" x="425.19" y="184.2" width="13.99" height="73.92" rx="7" />
+                            </clipPath>
+                            <clipPath id="clip-path-5">
+                                <polygon class="cls-3"
+                                    points="398.15 303.73 99.7 303.73 99.7 167.25 122.3 167.25 122.3 281.13 375.55 281.13 375.55 167.25 398.15 167.25 398.15 303.73" />
+                            </clipPath>
+                            <clipPath id="clip-path-6">
+                                <circle class="cls-4" cx="153.22" cy="249.46" r="12" />
+                            </clipPath>
+                            <clipPath id="clip-path-7">
+                                <polygon class="cls-3"
+                                    points="409.93 192.24 87.04 192.24 87.04 30.79 110.56 30.79 110.56 168.72 386.41 168.72 386.41 30.79 409.93 30.79 409.93 192.24" />
+                            </clipPath>
+                            <clipPath id="clip-path-8">
+                                <rect class="cls-3" x="237.79" y="30.79" width="23.52" height="153.96" />
+                            </clipPath>
+                            <clipPath id="clip-path-9">
+                                <circle class="cls-4" cx="368.5" cy="167.49" r="12" />
+                            </clipPath>
+                            <clipPath id="clip-path-10">
+                                <rect class="cls-3" x="201.18" y="145.5" width="95.67" height="83.43" />
+                            </clipPath>
+                        </defs>
+                        <title>Aktiv 1</title>
+                        <g id="Lag_2" data-name="Lag 2">
+                            <g id="Layer_1" data-name="Layer 1">
+                                <g id="chest">
+                                    <g id="chest-bottom">
+                                        <polygon class="cls-5"
+                                            points="378.28 170.42 366.31 123.87 130.2 123.87 117.42 172.75 378.28 170.42" />
+                                        <polygon class="cls-1"
+                                            points="133.42 126.08 133.42 167.49 122.3 167.49 133.42 126.08" />
+                                        <polygon class="cls-1"
+                                            points="375.55 167.25 363.54 167.25 363.54 125.86 375.55 167.25" />
+                                        <rect class="cls-1" x="115.28" y="168.67" width="275.85" height="130.18" />
+                                        <g class="cls-7">
+                                            <rect class="cls-4" x="78.51" y="246.01" width="393.48" height="6.72" />
+                                        </g>
+                                        <polyline class="cls-12"
+                                            points="117.42 167.67 117.42 298.84 393.27 298.84 393.27 167.67" />
+                                        <polygon class="cls-3"
+                                            points="398.15 303.73 99.7 303.73 99.7 167.25 122.3 167.25 122.3 281.13 375.55 281.13 375.55 167.25 398.15 167.25 398.15 303.73" />
+                                        <g class="cls-13">
+                                            <rect class="cls-10" x="76.88" y="164" width="29.73" height="146.08" />
+                                            <rect class="cls-10" x="122.48" y="164.22" width="264.1" height="125.08" />
+                                        </g>
+                                        <polygon class="cls-3"
+                                            points="122.3 167.25 133.42 126.08 363.54 126.08 375.55 167.25 398.15 167.25 381.71 121.65 117.42 121.65 99.7 167.25 122.3 167.25" />
+                                        <polygon class="cls-10"
+                                            points="106.61 167.67 124.11 121.65 117.42 121.65 99.7 167.25 106.61 167.67" />
+                                        <polygon class="cls-14"
+                                            points="386.58 167.49 371.79 125.86 363.54 125.86 375.55 167.25 386.58 167.49" />
+                                    </g>
+                                    <g id="chest-top">
+                                        <rect class="cls-16" x="102.45" y="35.07" width="299.37" height="149.69" />
+                                        <rect class="cls-2" x="153.22" y="39.8" width="56.15" height="93.85" />
+                                        <rect class="cls-4" x="144.67" y="35.07" width="56.15" height="90.43" />
+                                        <rect class="cls-2" x="305.04" y="39.8" width="56.15" height="93.85" />
+                                        <rect class="cls-4" x="296.85" y="39.8" width="56.15" height="85.7" />
+                                        <polyline class="cls-17"
+                                            points="104.59 35.07 104.59 184.75 403.96 184.75 403.96 35.07" />
+                                        <polygon class="cls-3"
+                                            points="409.93 192.24 87.04 192.24 87.04 30.79 110.56 30.79 110.56 168.72 386.41 168.72 386.41 30.79 409.93 30.79 409.93 192.24" />
+                                        <g class="cls-18">
+                                            <polygon class="cls-10"
+                                                points="96.36 213.21 66.63 213.21 66.63 5.13 96.36 5.13 125.06 30.94 125.06 39.19 96.36 39.33 96.36 213.21" />
+                                            <rect class="cls-10" x="222.84" y="5.13" width="29.73" height="208.08" />
+                                            <polygon class="cls-10"
+                                                points="393.27 173.33 110.56 173.33 110.56 28.47 421.74 28.47 421.3 37.51 393.27 37.08 393.27 173.33" />
+                                        </g>
+                                        <rect class="cls-19" x="110.56" y="35.07" width="275.85" height="9.47" />
+                                        <rect class="cls-3" x="237.79" y="30.79" width="23.52" height="153.96" />
+                                        <g class="cls-20">
+                                            <polygon class="cls-10"
+                                                points="246.15 214.03 216.42 214.03 216.42 0 246.15 0 269.66 37.41 246.15 37.41 246.15 214.03" />
+                                        </g>
+                                    </g>
+                                    <g id="chest-lock">
+                                        <rect class="cls-2" x="207.23" y="153.94" width="95.67" height="83.43" />
+                                        <rect class="cls-3" x="201.18" y="145.5" width="95.67" height="83.43" />
+                                        <g class="cls-22">
+                                            <polygon class="cls-23"
+                                                points="168.47 107.57 329.12 268.9 305.6 106.39 168.47 107.57" />
+                                        </g>
+                                        <path class="cls-2"
+                                            d="M250.79,208h0a6.86,6.86,0,0,1-6.82-7.61l2.36-21.72h8.93l2.36,21.72A6.87,6.87,0,0,1,250.79,208Z" />
+                                        <circle class="cls-2" cx="250.79" cy="178.67" r="12.47" />
+                                        <rect class="cls-24" x="201.18" y="144.18" width="95.67" height="11.01" />
+                                        <rect class="cls-25" x="201.11" y="144.13" width="95.74" height="3.72" />
+                                    </g>
+                                    <g id="chest-sparkles">
+                                        <path id="sparkle_mid" class="cls-26"
+                                            d="M207.1,115.46S187.64,110,183.29,91.65c-4.65,19.17-23.82,23.81-23.82,23.81s18.39,4.39,23.82,23.82C187.42,119.6,207.1,115.46,207.1,115.46Z" />
+                                        <path id="sparkle_left" class="cls-26"
+                                            d="M177,159s-13.23-3.7-16.19-16.18c-3.16,13-16.18,16.18-16.18,16.18s12.5,3,16.18,16.19C163.66,161.78,177,159,177,159Z" />
+                                        <path id="sparkle_right" class="cls-26"
+                                            d="M349.3,122.91s-13.22-3.7-16.18-16.18c-3.16,13-16.19,16.18-16.19,16.18s12.5,3,16.19,16.19C335.93,125.72,349.3,122.91,349.3,122.91Z" />
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+
+                <div data-reward-info class="reward-main-info modern-card">
+                    <p data-reward-name class="reward-name"></p>
+                    <p data-value-name class="reward-value-name"></p>
+                    <p data-desc class="reward-desc"></p>
+                </div> 
+
+                <div class="action-buttons">
+                    <button data-open-chest-btn role="button" class="link variant2">Otwórz</button>
+                    <button data-close-btn role="button" class="link variant1">Zamknij</button>
+                </div>
+              </div>
+
+            </template>
+        </custom-modal>
+
+        <!-- ACHIEVEMENT DETAILS MODAL START -->
+        <custom-modal data-modal-id="user-achievements-module-achievement-details-modal"
+            data-modal-content-class="achievement-details">
+            <template slot="modal-title">Szczegóły o osiągnięciu</template>
+            <template slot="modal-content"> 
+
+                <div class="details-container">
+
+                    <div class="details-content">
+
+                        <div class="modern-card details-info-left-top">
+                            <div class="details-image-container">
+                                <img data-image src="./icons/achievement/achievement-101.png" alt=""
+                                    class="details-main-image">
+                                    <highlight-button></highlight-button>
+                            </div>
+
+                            <div class="details-details">
+                                <p data-name class="details-title"></p>
+                                <p data-desc class="details-description"></p>
+
+                                <ul class="details-stats">
+                                    <li class="stat-group">
+                                        <i class="fa-solid fa-chart-simple stat-icon"></i>
+                                        <span class="stat-name">Trudność:</span>
+                                        <span data-difficulty-value class="stat-value"></span>
+                                    </li>
+
+                                    <li class="stat-group">
+                                        <i class="fa-solid fa-circle-dot stat-icon"></i>
+                                        <span class="stat-name">Punkty:</span>
+                                        <span data-points-value class="stat-value"></span>
+                                    </li>
+
+                                    <li class="stat-group">
+                                        <i class="fa-solid fa-star stat-icon"></i>
+                                        <span class="stat-name">Doświadaczenie:</span>
+                                        <span data-exp-value class="stat-value"></span>
+                                    </l>
+                                </ul>
+                            </div>
+                        </div>  
+
+                        <ul class="achievement-details-stats-list green-list green-list--variant2 list">
+                            <li class="achievement-details-stats-unlocked-date">
+                                <span class="text">
+                                    <span class="li-title">Data Odblokowania:</span>
+                                    <span>
+                                        <i class="fa-regular fa-calendar"></i> <span data-unlocked-at></span>
+                                    </span>
+                                </span>
+                                <span class="li-icon" aria-hidden="true">
+                                    <i class="fa-regular fa-clock"></i>
+                                </span>
+                            </li>
+                            <li class="achievement-details-stats-created-at">
+                                <span class="text">
+                                    <span class="li-title">Utworzono:</span>
+                                    <span class="achievement-details-date-full">
+                                        <i class="fa-regular fa-calendar"></i> <span data-created-at></span>
+                                    </span>
+                                </span>
+                                <span class="li-icon" aria-hidden="true">
+                                    <i class="fa-regular fa-calendar"></i>
+                                </span>
+                            </li>
+                            <li class="achievement-details-stats-category">
+                                <span class="text">
+                                    <span class="li-title">Kategoria:</span>
+                                    <span data-category-name>Brak</span>
+                                </span>
+                                <img data-category-icon class="category-icon" src="./icons/category/magic.png" alt=""
+                                    aria-hidden="true">
+                            </li>
+                            <li class="achievement-details-stats-modified-date">
+                                <span class="text">
+                                    <span class="li-title">Modyfikowano:</span>
+                                    <span>
+                                        <i class="fa-regular fa-calendar"></i> <span data-modified-at></span>
+                                    </span>
+                                </span>
+                                <span class="li-icon" aria-hidden="true">
+                                    <i class="fa-regular fa-clock"></i>
+                                </span>
+                            </li>
+                            <li class="achievement-details-stats-type">
+                                <span class="text">
+                                    <span class="li-title">Typ:</span>
+                                    <span data-type></span>
+                                </span>
+                                <span class="li-icon" aria-hidden="true">
+                                    <i class="fa-solid fa-list-check"></i>
+                                </span>
+                            </li>
+                            <li class="achievement-details-stats-status">
+                                <span class="text">
+                                    <span class="li-title">Status:</span>
+                                    <span data-status></span>
+                                </span>
+                                <span class="li-icon" aria-hidden="true">
+                                    <i class="fa-solid fa-list-check"></i>
+                                </span>
+                            </li>
+                        </ul>
+
+                        <div data-tab-content class="details-tabs">
+
+                            <nav class="tab-navigation" role="tablist" aria-label="details options">
+                                <button data-tab-button class="tab-button tab-button-single link variant2 active" role="tab"
+                                    aria-selected="true" aria-controls="requirements-panel">
+                                    Wymagania
+                                </button>
+                                <button data-tab-button class="tab-button link variant2" role="tab"
+                                    aria-selected="false" aria-controls="rewards-panel">
+                                    Nagrody
+                                </button>
+                            </nav>
+
+                            <div data-tab-panel class="modern-card tab-panel requirements-panel active"
+                                id="requirements-panel" role="tabpanel" aria-labelledby="create-tab">
+
+                                <div data-alerts-content></div>
+
+                                <div data-parent-content>
+                                    <p class="requirements-title">Wymaga najpierw zdobycia:</p>
+                                
+                                    <div class="requirement-parent-card">
+                                        <img data-parent-icon class="icon" src="" />
+                                        <span data-parent-name class="name"></span>
+                                        <span data-parent-type class="type"></span>
+                                    </div>
+                                </div>
+
+                                <p class="requirements-title">Wymagania:</p>
+
+                                <ul class="requirements-list" data-requirements-list></ul>
+                            </div>
+
+                            <div data-tab-panel class="modern-card tab-panel rewards-panel" id="rewards-panel"
+                                role="tabpanel" aria-labelledby="rewards-tab"> 
+
+                                <div class="rewards-section">
+
+                                    <div data-badge-reward-content class="reward-badge-content">
+                                        <p class="reward-title">Odznaka:</p>
+
+                                        <div class="reward-badge-info">
+                                            <div data-badge-reward class="badges-tiles badges-tiles-for-achievement-details reward-badge"></div>
+                                            <p data-badge-name class="reward-badge-name"></p>
+                                        </div> 
+                                    </div>
+    
+                                    <div data-items-reward-content>
+                                        <p class="reward-title">Lista przedmiotów:</p>
+
+                                        <ul data-item-rewards-list class="items-list rewards-items-list"></ul> 
+                                    </div> 
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="details-actions"> 
+                        <button data-close-btn class="link variant2">Zamknij</button>
+                        <button data-collect-rewards-btn class="link variant2">Odbierz Nagrody!</button>
+                    </div>
+
+                </div>
+
+            </template>
+        </custom-modal>
+        <!-- ACHIEVEMENT DETAILS MODAL END -->
+         
+    </div>
+
+    <script src="./js/Utils.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/ApiService.js"></script>
+    <script src="./js/Modules.js"></script>
+    <script src="./js/App.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

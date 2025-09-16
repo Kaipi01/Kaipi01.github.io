@@ -1,0 +1,127 @@
+@use "../../base/variables" as *;
+@use "../../functions/toRem" as *;
+
+#user-achievements-module {
+  .reward-details {
+    padding: 0;
+
+    .reward-main-content {
+      --text-value-shadow: var(--very-dark-gray);
+      --reward-color: var(--background);
+      --reward-color-opacity: var(--background);
+
+      padding: 2rem 1rem;
+      background: var(--background);
+      background: linear-gradient(
+        to right,
+        var(--reward-color),
+        var(--reward-color-opacity)
+      );
+      color: var(--font-color);
+      text-align: center;
+
+      @media (min-width: $content-breakpoint-tablet) {
+        padding: 2rem;
+      }
+    }
+
+    .reward-main-info {
+      --opacity: 1;
+      --transform: translateY(0);
+      margin: 1rem auto;
+
+      transform: var(--transform);
+      transition: all 0.3s ease;
+      opacity: var(--opacity);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      background-color: var(--background-85);
+      will-change: transform, opacity;
+    }
+
+    .reward-name {
+      font-size: 1.25rem;
+      font-weight: bold;
+
+      @media (min-width: $content-breakpoint-tablet) {
+        font-size: 1.65rem;
+      }
+    }
+
+    .reward-value-name {
+      --value-color: var(--font-color);
+      margin-block: 0.8rem;
+
+      color: var(--value-color);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 0 var(--text-value-shadow),
+        1px -1px 0 var(--text-value-shadow), -1px 1px 0 var(--text-value-shadow),
+        -1px -1px 0 var(--text-value-shadow), 1px 0px 0 var(--text-value-shadow),
+        0px 1px 0 var(--text-value-shadow), -1px 0px 0 var(--text-value-shadow),
+        0px -1px 0 var(--text-value-shadow);
+      text-transform: uppercase;
+
+      @media (min-width: $content-breakpoint-tablet) {
+        font-size: 1.15rem;
+      }
+    }
+
+    .reward-desc {
+      color: var(--font-color-gray);
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .reward-title {
+      margin-bottom: 1rem;
+      background-color: var(--background-85);
+      font-size: 1.25rem;
+      font-weight: bold;
+
+      @media (min-width: $content-breakpoint-tablet) {
+        font-size: 2rem;
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      position: relative;
+      z-index: 3;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+
+    .reward-image {
+      display: block;
+      z-index: 2;
+      max-width: toRem(155);
+      margin: 0 auto;
+      border-radius: 15px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 54px 55px,
+        rgba(0, 0, 0, 0.22) 0px -12px 30px, rgba(0, 0, 0, 0.22) 0px 4px 6px,
+        rgba(0, 0, 0, 0.27) 0px 12px 13px, rgba(0, 0, 0, 0.19) 0px -3px 5px;
+
+      @media (min-width: $content-breakpoint-tablet-small) {
+        max-width: toRem(185);
+      }
+
+      &.animate {
+        position: absolute;
+        top: 7rem;
+        left: 50%;
+        transform: translateX(-50%) scale(0.5);
+        transition: all 0.5s ease-in;
+        opacity: 0;
+        will-change: transform, opacity;
+
+        &.show {
+          top: 9rem;
+          transform: translateX(-50%) scale(1);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

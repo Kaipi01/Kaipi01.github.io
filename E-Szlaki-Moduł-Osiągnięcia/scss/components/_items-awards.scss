@@ -1,0 +1,191 @@
+@use "../base/variables" as *;
+@use "../functions/toRem" as *;
+
+#user-achievements-module {
+  .item-card { 
+    --card-background: var(--value-color);
+
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    background: rgba(58, 58, 58, 0.717);
+    box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 8px;
+
+    &.unlocked { 
+      background: linear-gradient(
+        to right,
+        var(--card-background),
+        var(--value-color-opacity)
+      ); 
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 5rem;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.15);
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+                clip-path: polygon(0 0, 0 100%, 100% 0);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: left 0.5s ease;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+      }
+    }
+
+    &:hover::before {
+      left: 100%;
+
+      @media (prefers-reduced-motion: reduce) {
+        left: -100%;
+      }
+    } 
+    .item-frame {
+      position: relative;
+      flex-shrink: 0;
+      width: toRem(55);
+      height: toRem(55);
+      border-radius: 10px;
+    }
+
+    .item-icon {
+      position: relative;
+      // z-index: 1;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 8px;
+    }
+
+    .item-info {
+      flex-grow: 1;
+    }
+
+    .item-name {
+      margin-bottom: 0.25rem;
+      color: var(--font-color);
+      font-size: 1rem;
+      text-shadow: 1px 1px #00000030;
+    }
+
+    .item-description {
+      display: block;
+      margin-top: toRem(4);
+      color: var(--font-color-gray);
+      font-size: 0.85rem;
+    }
+  }
+
+  .items-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: start center;
+    width: 100%;
+    list-style: none;
+    gap: 0.5rem;
+
+    @media (min-width: $content-breakpoint-desktop) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .item-card {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      gap: 1rem;
+    }
+  }
+
+  .items-tiles {  
+    --col-number: 2;
+    --tiles-size-min: 6.5rem;
+    --tiles-size-max: 10.625rem; 
+
+    display: grid;
+    grid-template-columns: repeat(var(--col-number), minmax(var(--tiles-size-min), var(--tiles-size-max)));  
+    justify-content: center;  
+    gap: 0.5rem;
+    list-style: none;
+
+    @media (min-width: $content-breakpoint-phone) {
+      --col-number: 3; 
+    } 
+    @media (min-width: $content-breakpoint-phone-large) {
+      --col-number: 4; 
+    }
+    @media (min-width: $content-breakpoint-tablet-small) {
+      --col-number: 5; 
+    }
+    @media (min-width: $content-breakpoint-tablet) {
+      --col-number: 6;  
+      gap: 0.75rem;
+    } 
+    @media (min-width: $content-breakpoint-desktop-small) { 
+      --col-number: 7;
+      gap: 1.25rem;
+    } 
+    @media (min-width: $content-breakpoint-desktop-large) { 
+      gap: 1.75rem;
+    }
+
+    &-for-cabin {  
+      @media (min-width: $content-breakpoint-tablet-large) {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      } 
+    }
+
+    .item-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      padding: 1rem; 
+
+      @media (min-width: $content-breakpoint-desktop) { 
+        padding: 1.5rem; 
+      }
+
+      &::after {
+        width: 100%;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .item-info {
+          transform: translateY(0);
+        }
+      }
+
+      .item-frame {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+      }
+
+      .item-info {
+        display: none;
+      } 
+    }
+  }
+}

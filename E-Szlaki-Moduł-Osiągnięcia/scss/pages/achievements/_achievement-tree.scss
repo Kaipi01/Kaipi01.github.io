@@ -1,0 +1,290 @@
+@use "../../base/variables" as *;
+@use "../../functions/toRem" as *;
+
+#user-achievements-module {
+  .empty-tree {
+    &-message {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      max-width: toRem(300);
+      text-align: center;
+      font-size: 1.2rem;
+      color: #666;
+      background: #f5f5f5;
+      border-radius: 8px;
+      margin: toRem(20) auto;
+    }
+  } 
+
+  .achievement-tree {
+    padding-block: 5rem;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+
+    @media (min-width: $content-breakpoint-desktop) {
+      gap: 2.5rem;
+    }
+  }
+
+  .achievement-level {
+    display: grid;
+    position: relative;
+    grid-auto-columns: var(--achievement-size);
+    grid-auto-flow: column;
+    justify-content: center;
+    min-height: var(--achievement-size);
+    gap: var(--grid-gap);
+  }
+
+  @media (min-width: $content-breakpoint-desktop) {
+    .achievement-level {
+      min-height: calc(var(--achievement-size) + 1.35rem);
+    }
+  }
+
+  .achievement {
+    display: flex;
+    position: relative;
+    z-index: 9;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: var(--achievement-size, 2.5rem);
+    height: var(--achievement-size, 2.5rem);
+    transition: all 0.3s;
+    background: var(--gray);
+    cursor: pointer;
+    border-radius: 50%;
+
+    &.achieved {
+      background: var(--yellow);
+    }
+
+    // &.achieved-no-rewarded {
+    //   // background: red;
+
+    // }
+
+    // @keyframes achieved-no-rewarded-pulse-animation {
+    //   0% {
+    //     box-shadow: 0 0 0 0px var(--yellow-opacity);
+    //   }
+    //   100% {
+    //     box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+    //   }
+    // }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.025);
+    }
+
+    * {
+      pointer-events: none;
+    }
+
+    &:focus {
+      outline: auto;
+    }
+
+    img {
+      width: 85%;
+      -o-object-fit: contain;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+  }
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 12.5rem;
+    padding: 0.825rem 1rem;
+    border-radius: 0.3125rem;
+    // background: rgba(0, 0, 0, 0.9);
+    color: white;
+    font-size: 0.75rem;
+  }
+
+  .desktop-difficulty-indicator {
+    display: flex;
+    position: absolute;
+    top: -0.3125rem;
+    right: -0.3125rem;
+    align-items: center;
+    justify-content: center;
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border: 0.0625rem solid #666;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 0.625rem;
+  }
+
+  .connection-lines,
+  .mobile-connection-lines {
+    position: absolute;
+    z-index: -1 !important;
+    // z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .mobile-tree {
+    position: relative;
+    padding: 2.625rem 0;
+  }
+
+  .mobile-tree-list {
+    position: relative;
+    margin: 0;
+    padding-left: 1.875rem;
+    list-style: none;
+  }
+
+  @media (min-width: $content-breakpoint-phone-small) {
+    .mobile-tree-list {
+      padding-left: 3.125rem;
+    }
+  }
+
+  @media (min-width: $content-breakpoint-phone-large) {
+    .mobile-tree-list {
+      padding-left: 4.375rem;
+    }
+  }
+
+  .mobile-tree-list[data-level="0"],
+  .mobile-tree-list[data-level="1"] {
+    padding-left: 0;
+  }
+
+  @media (min-width: $content-breakpoint-phone-large) {
+    .mobile-tree-list[data-level]:not([data-level="0"], [data-level="1"]) {
+      margin-bottom: -4rem;
+      /* margin-bottom: -0.9375rem; */
+    }
+  }
+
+  .mobile-tree-item {
+    position: relative;
+    /* margin-left: 1rem; */
+  }
+
+  .mobile-achievement-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+
+  .mobile-achievement {
+    margin-block: 0.3125rem;
+  }
+
+  .mobile-achievement-name {
+    position: absolute;
+    top: 50%;
+    left: calc(var(--achievement-size, 2.5rem) + 0.625rem);
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .mobile-difficulty-indicator {
+    display: flex;
+    position: absolute;
+    top: -0.3125rem;
+    right: -0.3125rem;
+    align-items: center;
+    justify-content: center;
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border: 0.0625rem solid #666;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 0.625rem;
+  }
+
+  .connection-line,
+  .mobile-connection-line {
+    position: absolute;
+    height: 0.3rem;
+    transform-origin: 0 0;
+    transition: all 0.3s ease;
+    border-radius: 100vmax;
+    background-color: var(--gray);
+    background-size: 200% 100%;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 3px 6px;
+
+    -webkit-animation: drawLineAnimation 1s linear forwards;
+
+    animation: drawLineAnimation 1s linear forwards;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+
+    @media (min-width: $content-breakpoint-desktop) {
+      height: 0.4rem;
+    }
+  }
+
+  .connection-line.highlight,
+  .mobile-connection-line.highlight {
+    // animation: glow 3s ease-in-out infinite;
+    background: var(--yellow) !important;
+    box-shadow: 0 0 5px var(--yellow);
+  }
+
+  @-webkit-keyframes drawLineAnimation {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+  @keyframes drawLineAnimation {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+  @-webkit-keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--yellow);
+    }
+    50% {
+      box-shadow: 0 0 10px var(--yellow), 0 0 20px var(--yellow);
+    }
+    100% {
+      box-shadow: 0 0 5px var(--yellow);
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--yellow);
+    }
+    50% {
+      box-shadow: 0 0 10px var(--yellow), 0 0 20px var(--yellow);
+    }
+    100% {
+      box-shadow: 0 0 5px var(--yellow);
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@use "../../base/variables" as *;
+@use "../../functions/toRem" as *;
+
+@use "./badge-details";
+@use "./item-details";
+@use "./reward-details";
+
+#user-achievements-module {
+  .awards-layout { 
+
+    .badges-tiles,
+    .items-tiles {
+      place-items: center;
+      place-content: start center;
+    }
+
+    .data-badges-list {
+      min-height: 43rem; 
+    }
+    .data-items-list {
+      min-height: 37rem; 
+    }
+
+    .awards-panel { 
+      flex-direction: column;
+      justify-content: flex-start;
+
+      &.active {
+        display: flex;
+      }
+
+      .pagination {
+        justify-self: flex-end;
+        align-self: flex-end;
+      }
+    }
+
+    .awards-navigation {
+      .tab-button {
+        @media (max-width: $content-breakpoint-phone-large) {
+          width: 100%;
+        }
+        
+      }
+    }
+
+    .display-data-modes {
+      justify-content: flex-end;
+
+      @media (min-width: $content-breakpoint-tablet) {
+        margin-bottom: 0;
+      }
+    }
+
+    .awards-number-stats {
+      margin-bottom: 2.5rem;
+      font-size: 1.25rem;
+      font-weight: bold;
+
+      .value {
+        color: var(--blue);
+      }
+    }
+  }
+}

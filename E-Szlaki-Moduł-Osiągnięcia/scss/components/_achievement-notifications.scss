@@ -1,0 +1,338 @@
+@use "../base/variables" as *;
+@use "../functions/toRem" as *;
+
+@use "../base/variables" as *;
+@use "../functions/toRem" as *;
+
+#user-achievements-module {
+  .achievement-notifications { 
+
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    bottom: toRem(8);
+    gap: 1rem;
+
+    @media (min-width: $content-breakpoint-phone-large) {
+      align-items: flex-end;
+    }
+    @media (min-width: $content-breakpoint-tablet) {
+      min-width: toRem(500);
+      bottom: toRem(16);
+    }
+
+    .notify {
+      $notify-width: toRem(350);
+      --notify-width: $notify-width;
+      --button: var(--green);
+      --notify: var(--background);
+      --opacity: 0;
+
+      transition: opacity 0.3s ease-in;
+      will-change: opacity;
+      opacity: var(--opacity);
+      display: block;
+      position: relative; 
+      width: 100%;
+      min-height: toRem(70);
+      padding: toRem(8) toRem(13);
+      border-radius: toRem(6);
+      z-index: 999;
+      background-color: var(--notify);
+      box-shadow: rgba(0, 0, 0, 0.55) 0px toRem(5) toRem(15);
+      color: var(--font-color);
+
+      @media (min-width: $content-breakpoint-phone-large) {
+        width: toRem(425); 
+      }
+
+      &.show {
+        --opacity: 1;
+      }
+
+      .button {
+        content: "\f095";
+        display: flex;
+        position: absolute;
+        top: toRem(-15);
+        right: toRem(13);
+        align-items: center;
+        justify-content: center;
+        width: toRem(65);
+        height: toRem(65);
+        border-radius: toRem(10);
+        background-color: var(--button);
+        box-shadow: rgba(0, 0, 0, 0.34) 0px toRem(3) toRem(8);
+        color: #fff;
+        font-family: "Font Awesome 5 Free";
+        font-size: toRem(30); 
+      }
+
+      span {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+      }
+
+      .title {
+        display: block;
+        padding-top: 0.25rem;
+        margin-bottom: 0.3rem;
+        font-size: 0.9rem; 
+        font-weight: bold;
+
+        @media (min-width: $content-breakpoint-phone-large) {
+          font-size: toRem(20); 
+        }
+      }
+
+      .subtitle {
+        color: var(--font-color-gray);
+      }
+
+      &.animate {
+        -webkit-animation: achievement-notifications-base-animation 3s ease
+          alternate infinite;
+        animation: achievement-notifications-base-animation 3s ease alternate
+          infinite;
+
+        .button {
+          -webkit-animation: achievement-notifications-button-animation 3s ease
+            alternate infinite;
+          animation: achievement-notifications-button-animation 3s ease
+            alternate infinite;
+        }
+
+        .button i {
+          -webkit-animation: achievement-notifications-icon-animation 3s ease
+            alternate infinite;
+          animation: achievement-notifications-icon-animation 3s ease alternate
+            infinite;
+        }
+
+        span {
+          -webkit-animation: achievement-notifications-text-animation 3s ease
+            alternate infinite;
+          animation: achievement-notifications-text-animation 3s ease alternate
+            infinite;
+        }
+      }
+    }
+
+    .reward-notify {
+      --opacity: 0;
+
+      transition: opacity 0.3s ease-in;
+      will-change: opacity;
+      opacity: var(--opacity);
+      display: flex;
+      align-items: center;
+      width: 95%;
+      max-width: toRem(700);
+      padding: toRem(10) toRem(14);
+      transition: all 0.3s ease-in;
+      background-color: var(--background);
+      box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+      color: var(--font-color);
+      gap: toRem(16);
+      z-index: 999;
+      border-radius: 10px;
+
+      &.show {
+        --opacity: 1;
+      }
+
+      .notification-icon {
+        max-width: toRem(50);
+      }
+
+      .notification-icon img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.45);
+      }
+
+      .notification-content {
+        flex-grow: 1;
+      }
+
+      .notification-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: toRem(4);
+        font-size: toRem(16);
+        gap: toRem(8);
+        font-weight: bold;
+      }
+
+      .trophy-icon {
+        color: var(--yellow);
+        font-size: toRem(14);
+        -webkit-filter: drop-shadow(0 1px 1px #000);
+        filter: drop-shadow(0 1px 1px #000);
+      }
+
+      .notification-subtitle {
+        color: var(--font-color-gray);
+        font-size: toRem(14);
+      }
+
+      .notification-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: toRem(8);
+        transition: opacity 0.3s ease;
+        color: var(--font-color-gray);
+        border: none;
+        background: transparent;
+        opacity: 0.6;
+        cursor: pointer;
+      }
+
+      .notification-close:hover {
+        opacity: 1;
+      }
+
+      .notification-close i {
+        font-size: toRem(20);
+      }
+    }
+  }
+
+  @-webkit-keyframes achievement-notifications-base-animation {
+    0% {
+      width: toRem(90); // 90px
+      height: 0;
+    }
+    22% {
+      height: toRem(83); // 83px
+    }
+    25% {
+      width: toRem(90); // 90px
+      height: toRem(76); // 76px
+    }
+    32% {
+      height: toRem(70); // 63px
+    }
+    50% {
+      width: toRem(425); // 425px
+    }
+  }
+
+  @keyframes achievement-notifications-base-animation {
+    0% {
+      width: toRem(90); // 90px
+      height: 0;
+    }
+    22% {
+      height: toRem(83); // 83px
+    }
+    25% {
+      width: toRem(90); // 90px
+      height: toRem(76); // 76px
+    }
+    32% {
+      height: toRem(70); // 63px
+    }
+    50% {
+      width: toRem(425); // 425px
+    }
+  }
+
+  @-webkit-keyframes achievement-notifications-button-animation {
+    0% {
+      width: 0px;
+      height: 0px;
+    }
+    17% {
+      right: toRem(8); // 8px
+      width: toRem(75); // 75px
+      height: toRem(75); // 75px
+    }
+    22% {
+      right: toRem(13); // 13px
+      width: toRem(65); // 65px
+      height: toRem(65); // 65px
+    }
+    100% {
+    }
+  }
+
+  @keyframes achievement-notifications-button-animation {
+    0% {
+      width: 0px;
+      height: 0px;
+    }
+    17% {
+      right: toRem(8); // 8px
+      width: toRem(75); // 75px
+      height: toRem(75); // 75px
+    }
+    22% {
+      right: toRem(13); // 13px
+      width: toRem(65); // 65px
+      height: toRem(65); // 65px
+    }
+    100% {
+    }
+  }
+
+  @-webkit-keyframes achievement-notifications-text-animation {
+    0% {
+      opacity: 0;
+    }
+    39% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes achievement-notifications-text-animation {
+    0% {
+      opacity: 0;
+    }
+    39% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes achievement-notifications-icon-animation {
+    0% {
+      transform: rotate(-680deg);
+      opacity: 0;
+    }
+    1% {
+      transform: rotate(-380deg);
+      opacity: 0;
+    }
+    27% {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes achievement-notifications-icon-animation {
+    0% {
+      transform: rotate(-680deg);
+      opacity: 0;
+    }
+    1% {
+      transform: rotate(-380deg);
+      opacity: 0;
+    }
+    27% {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  }
+}

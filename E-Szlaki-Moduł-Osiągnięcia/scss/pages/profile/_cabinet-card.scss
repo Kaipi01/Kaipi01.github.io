@@ -1,0 +1,16 @@
+@use "../../base/variables" as *;
+@use "../../functions/toRem" as *;
+
+#user-achievements-module {
+  .profile-layout {
+    .cabinet-badges-card {
+      grid-area: badges;
+      min-height: toRem(230);
+    }
+
+    .cabinet-items-card {
+      grid-area: items;
+      min-height: toRem(230);
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@use "../base/variables" as *;
+@use "../functions/toRem" as *;
+
+#user-achievements-module {
+  .infinite-scroll-sentinel {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: toRem(100);
+    margin: toRem(75) auto;
+    gap: toRem(20);
+
+    .loading__dot {
+      display: inline-block;
+      width: 33.3333%;
+      aspect-ratio: 1/1;
+      -webkit-animation: dot ease-in-out 0.8s infinite;
+              animation: dot ease-in-out 0.8s infinite;
+      border-radius: 50%;
+      background-color: var(--green);
+      box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 5px;
+    }
+
+    .loading__dot:nth-of-type(2) {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s;
+    }
+
+    .loading__dot:nth-of-type(3) {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s;
+    }
+
+    @-webkit-keyframes dot {
+      0% {
+        transform: scale(1);
+        background-color: var(--green);
+      }
+      50% {
+        transform: scale(1.3);
+        background-color: var(--light-green);
+      }
+      100% {
+        transform: scale(1);
+        background-color: var(--green);
+      }
+    }
+
+    @keyframes dot {
+      0% {
+        transform: scale(1);
+        background-color: var(--green);
+      }
+      50% {
+        transform: scale(1.3);
+        background-color: var(--light-green);
+      }
+      100% {
+        transform: scale(1);
+        background-color: var(--green);
+      }
+    }
+  }
+}
