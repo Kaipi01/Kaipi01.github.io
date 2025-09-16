@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Prywatne zadania użytkownika</title>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- USER PRIVATE TASKS MODULE START -->
+        <section class="modern-card" id="user-private-tasks-module">
+
+            <!-- MAIN CONTENT LAYOUT START -->
+            <div class="main-content-layout">
+
+                <!-- MAIN NAVIGATION START -->
+                <nav data-main-navigation class="main-navigation modern-card">
+                    <ul data-main-navigation-list class="main-navigation-list">
+                        <li class="main-navigation-item">
+                            <a data-main-navigation-link="panel-glowny" class="main-navigation-link"
+                                href="#panel-glowny">
+                                <i class="main-navigation-link-icon fa-solid fa-house"></i>
+                                <span class="main-navigation-link-text">Panel Główny</span>
+                            </a>
+                        </li>
+                        <li class="main-navigation-item">
+                            <a data-main-navigation-link="zadania" class="main-navigation-link" href="#zadania">
+                                <i class="main-navigation-link-icon fa-solid fa-list-check"></i>
+                                <span class="main-navigation-link-text">Zadania</span>
+                            </a>
+                        </li>
+                        <li class="main-navigation-item">
+                            <a data-main-navigation-link="kategorie" class="main-navigation-link" href="#kategorie">
+                                <i class="main-navigation-link-icon fa-solid fa-icons"></i>
+                                <span class="main-navigation-link-text">Kategorie</span>
+                            </a>
+                        </li>
+                        <li class="main-navigation-item">
+                            <a data-main-navigation-link="archiwum" class="main-navigation-link" href="#archiwum">
+                                <i class="main-navigation-link-icon fa-regular fa-folder"></i>
+                                <span class="main-navigation-link-text">Archiwum</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- MAIN NAVIGATION START -->
+
+                <div data-main-content class="main-content-wrapper">
+
+                    <!-- MAIN PANEL PAGE START -->
+                    <section data-content-page="#panel-glowny" id="panel-glowny" class="main-panel panel active">
+                        <div class="statistics-card modern-card">
+
+                            <div class="statistics-card-left-content" data-date-time-statisics>
+                                <p data-statistic-current-time class="upt-big-header">13:26:20</p>
+                                <p data-statistic-current-date class="upt-sub-header">Sobota, 12 Styczeń 2022</p>
+
+                                <ul class="green-list list">
+                                    <li class="upt-task-details-stats-created-at">
+                                        <span class="text">
+                                            <span class="li-title">Zadania na dziś:
+                                                <span data-statistic-daily-tasks-number
+                                                    class="statistics-card-tasks-number">0</span>
+                                            </span>
+                                        </span>
+                                        <span class="li-icon" aria-hidden="true">
+                                            <i class="fa-regular fa-calendar"></i>
+                                        </span>
+                                    </li>
+                                    <li class="upt-task-details-stats-deadline-date">
+                                        <span class="text">
+                                            <span class="li-title">Liczba głównych zadań:
+                                                <span data-statistic-main-tasks-number class="statistics-card-tasks-number">0</span>
+                                            </span>
+                                        </span>
+                                        <span class="li-icon" aria-hidden="true">
+                                            <i class="fa-regular fa-clock"></i>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div> 
+
+                            <figure data-pie-chart data-title="Statystyki Zadań Głównych" class="custom-pie-chart statistics-card-right-content" aria-labelledby="pie-chart-desc">
+                                <div data-pie-chart-appearance class="pie-chart donut" aria-live="polite"></div>
+                                <figcaption id="pie-chart-desc" class="sr-only">
+                                    <span>Wykres przedstawia procentowy podział statusów zadań</span>
+                                </figcaption>
+                            </figure>
+
+                        </div>
+                        <div class="start-action-card modern-card"> 
+                            <button data-add-task-button class="link link-100 variant3">
+                                <i class="link-icon fa-solid fa-plus"></i> Dodaj Nowe Zadanie</button>
+                            <button data-add-category-button class="link link-100 variant3">
+                                <i class="link-icon fa-solid fa-plus"></i> Dodaj Nową Kategorię
+                            </button>
+                        </div>
+                        <div data-time-to-end-day class="help-informations-card modern-card">
+                            <p class="help-informations-card-title">Do końca dnia zostało:</p>
+                        </div>
+                        <div class="daily-tasks-card">
+                            <div class="upt-header modern-card">
+                                <p class="upt-small-header">Zadania dzienne</p>
+                                <a data-show-daily-tasks href="#zadania" class="link variant2 small">Pokaż więcej</a>
+                            </div>
+                            <ul data-daily-tasks-list class="preview-tasks-list">
+                                <li data-no-daily-tasks-card class="modern-card modern-card--info no-tasks-card">
+                                    <i class="fa-solid fa-circle-info"></i> 
+                                    <span class="no-tasks-card-info">Obecnie nie masz żadnych zadań dziennych</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="main-tasks-card">
+                            <div class="upt-header modern-card">
+                                <p class="upt-small-header">Zadania główne</p>
+                                <a data-show-main-tasks href="#zadania" class="link variant2 small">Pokaż więcej</a>
+                            </div>
+                            <ul data-main-tasks-list class="preview-tasks-list">
+                                <li data-no-main-tasks-card class="modern-card modern-card--info no-tasks-card">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span class="no-tasks-card-info">Obecnie nie masz żadnych zadań głównych</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="categories-card modern-card">
+                            <div class="upt-header pb-1">
+                                <p class="upt-small-header">Kategorie zadań</p>
+                                <a href="#kategorie" class="link small variant2">Pokaż więcej</a>
+                            </div>
+                            <p data-no-categories class="modern-card modern-card--info">
+                                <i class="fa-solid fa-circle-info"></i> 
+                                Nie posiadasz obecnie żadnych kategorii zadań
+                            </p>
+                            <ul data-category-list class="task-category-list"></ul>
+                        </div>
+                    </section>
+                    <!-- MAIN PANEL PAGE END -->
+
+                    <!-- TASKS PAGE START -->
+                    <section data-content-page="#zadania" id="zadania" class="tasks-panel panel">
+                        <div class="actions-card modern-card">
+
+                            <div class="actions-card-content-top">
+
+                                <div class="actions-card-header">
+                                    <p data-current-type-title class="actions-card-title upt-header">Zadania Dzienne</p>
+                                    <button data-tasks-type-toggle-btn data-current-type="Dzienne"
+                                        class="actions-card-toggle-btn link link-100 small variant2">
+                                        Pokaż zadania główne
+                                    </button>
+                                </div>
+
+                                <custom-search-form data-id="upt-search-input-for-tasks" data-for-panel="tasks"></custom-search-form>
+
+                            </div>
+
+                            <div class="actions-card-content-bottom">
+
+                                <button data-add-task-button class="add-task-btn link link-100 variant3">
+                                    <i class="link-icon fa-solid fa-plus"></i> Dodaj Nowe Zadanie
+                                </button>
+
+                                <custom-popover data-class="custom-select-green">
+                                    <template data-class="custom-select-green-styled"
+                                        slot="button-text">Filtruj</template>
+                                    <template data-class="custom-select-green-options" slot="content">
+
+                                        <span data-filter-tasks>
+                                            <label class="custom-switch">
+                                                <input type="checkbox" name="only-important">
+                                                <span class="toggle"><span class="toggle--handler"></span></span>
+                                                <span class="label-text">Tylko Ważne</span>
+                                            </label>
+
+                                            <label class="custom-switch">
+                                                <input type="checkbox" name="only-unimportant">
+                                                <span class="toggle"><span class="toggle--handler"></span></span>
+                                                <span class="label-text">Tylko Mało Ważne</span>
+                                            </label>
+
+                                            <label class="custom-switch">
+                                                <input type="checkbox" name="only-completed">
+                                                <span class="toggle"><span class="toggle--handler"></span></span>
+                                                <span class="label-text">Tylko Ukończone</span>
+                                            </label>
+
+                                            <label class="custom-switch">
+                                                <input type="checkbox" name="only-uncompleted">
+                                                <span class="toggle"><span class="toggle--handler"></span></span>
+                                                <span class="label-text">Tylko Nie Ukończone</span>
+                                            </label>
+                                        </span>
+
+                                    </template>
+                                </custom-popover>
+
+                                <select data-sort-tasks data-custom-select data-class-name="custom-select-green">
+                                    <option value="hide">Sortuj</option>
+                                    <option value="deadline-asc">Najbliższy termin</option>
+                                    <option value="deadline-desc">Najdalszy termin</option>
+                                    <option value="priority-asc">Priorytet od najniższego</option>
+                                    <option value="priority-desc">Priorytet od największego</option>
+                                    <option value="name-asc">Nazwa A-Z</option>
+                                    <option value="name-desc">Nazwa Z-A</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+                        <div data-tasks-list class="tasks-cards-list">
+                            <p data-no-daily-tasks-message data-task-card class="modern-card modern-card--info tasks-cards-list-message">
+                                <i class="fa-solid fa-circle-info"></i>
+                                Nie posiadasz obecnie żadnych zadań dziennych. Utwórz je za pomocą przycisku: <b>"Dodaj
+                                    Nowe Zadanie"</b>
+                            </p>
+                            <p data-no-main-tasks-message data-task-card class="modern-card modern-card--info tasks-cards-list-message">
+                                <i class="fa-solid fa-circle-info"></i>
+                                Nie posiadasz obecnie żadnych zadań głównych. Utwórz je za pomocą przycisku: <b>"Dodaj
+                                    Nowe Zadanie"</b>
+                            </p>
+                        </div>
+                    </section>
+                    <!-- TASKS PAGE END -->
+
+                    <!-- CATEGORIES PAGE START -->
+                    <section data-content-page="#kategorie" id="kategorie" class="categories-panel panel">
+                        <div class="actions-card modern-card">
+                            <button data-add-category-button class="actions-card-left-content link link-100 variant3">
+                                <i class="link-icon fa-solid fa-plus"></i> Dodaj Nową Kategorię
+                            </button>
+                            <div class="actions-card-right-content">
+                                <select data-sort-category data-custom-select data-class-name="custom-select-green">
+                                    <option value="hide">Sortuj</option>
+                                    <option value="created-date-asc">Data utworzenia rosnąco</option>
+                                    <option value="created-date-desc">Data utworzenia malejąco</option>
+                                    <option value="name-asc">Nazwa A-Z</option>
+                                    <option value="name-desc">Nazwa Z-A</option>
+                                </select>
+ 
+                                <custom-search-form data-id="upt-search-input-for-category" data-for-panel="category"></custom-search-form>
+
+                            </div>
+                        </div>
+                        <p data-no-categories class="modern-card modern-card--info">
+                            <i class="fa-solid fa-circle-info"></i> 
+                            Nie posiadasz obecnie żadnych kategorii zadań. Utwórz je za pomocą przycisku: <b>"Dodaj Nową Kategorię"</b>
+                        </p>
+                        <ul data-category-list class="categories-list"></ul>
+                    </section>
+                    <!-- CATEGORIES PAGE END -->
+
+                    <!-- ARCHIVE PAGE START -->
+                    <section data-content-page="#archiwum" id="archiwum" class="archive-panel panel">
+
+                        <div class="actions-card modern-card">
+
+                            <custom-popover data-class="custom-select-green">
+                                <template data-class="custom-select-green-styled" slot="button-text">Filtruj</template>
+                                <template data-class="custom-select-green-options" slot="content">
+
+                                    <span data-filter-tasks>
+                                        <label class="custom-switch">
+                                            <input type="checkbox" name="only-important">
+                                            <span class="toggle"><span class="toggle--handler"></span></span>
+                                            <span class="label-text">Tylko Ważne</span>
+                                        </label>
+
+                                        <label class="custom-switch">
+                                            <input type="checkbox" name="only-unimportant">
+                                            <span class="toggle"><span class="toggle--handler"></span></span>
+                                            <span class="label-text">Tylko Mało Ważne</span>
+                                        </label>
+
+                                        <label class="custom-switch">
+                                            <input type="checkbox" name="only-completed">
+                                            <span class="toggle"><span class="toggle--handler"></span></span>
+                                            <span class="label-text">Tylko Ukończone</span>
+                                        </label>
+
+                                        <label class="custom-switch">
+                                            <input type="checkbox" name="only-uncompleted">
+                                            <span class="toggle"><span class="toggle--handler"></span></span>
+                                            <span class="label-text">Tylko Nie Ukończone</span>
+                                        </label>
+                                    </span>
+
+                                </template>
+                            </custom-popover>
+
+                            <select data-sort-tasks data-custom-select data-class-name="custom-select-green">
+                                <option value="hide">Sortuj</option>
+                                <option value="deadline-asc">Najbliższy termin</option>
+                                <option value="deadline-desc">Najdalszy termin</option>
+                                <option value="priority-asc">Priorytet od najniższego</option>
+                                <option value="priority-desc">Priorytet od największego</option>
+                                <option value="name-asc">Nazwa A-Z</option>
+                                <option value="name-desc">Nazwa Z-A</option>
+                            </select>
+ 
+                            <custom-search-form data-id="upt-search-input-for-archive" data-for-panel="archive"></custom-search-form>
+
+                        </div>
+
+                        <p data-no-tasks-archive class="modern-card modern-card--info">
+                            <i class="fa-solid fa-circle-info"></i> 
+                            Tutaj będą sie wyświetlały zadania zarchiwizowane i porzucone, czyli takie, które nie
+                                zostały wykonane na czas
+                        </p>
+
+                        <ul data-tasks-archive-list class="tasks-archive-list">
+                        </ul>
+                    </section>
+                    <!-- ARCHIVE PAGE END -->
+
+                </div>
+            </div>
+            <!-- MAIN CONTENT LAYOUT END -->
+
+            <!-- TASK MODAL FORM START -->
+            <custom-modal data-modal-id="user-private-tasks-module-task-form-modal"
+                data-modal-first-focus="#upt-task-input-name">
+                <template slot="modal-title">Dodaj Nowe Zadanie</template>
+
+                <template slot="modal-content">
+                    <form id="user-private-tasks-module-task-form" class="upt-task-form">
+                        <input type="hidden" name="upt-task-form-mode">
+                        <input type="hidden" name="upt-task-form-id">
+
+                        <div data-form-field class="upt-form-field">
+                            <input class="floating-label-control upt-form-control" type="text" name="upt-task-name"
+                                id="upt-task-input-name" placeholder="Nazwa">
+                            <label class="floating-label" for="upt-task-input-name">Nazwa Zadania</label>
+
+                            <i class="upt-icon fa-solid fa-pen"></i>
+                        </div>
+
+                        <div data-form-field class="upt-form-select-field">
+                            <select id="upt-task-input-type" name="upt-task-type" data-custom-select
+                                data-class-name="custom-select-green">
+                                <option value="hide">Typ Zadania</option>
+                                <option value="Dzienne">Dzienne</option>
+                                <option value="Główne">Główne</option>
+                            </select>
+                            <label class="floating-label floating-label--for-select" for="upt-task-input-type">
+                                Typ Zadania
+                            </label>
+                        </div>
+
+                        <div data-form-field class="upt-form-select-field">
+                            <select id="upt-task-input-category" name="upt-task-category" data-custom-select
+                                data-class-name="custom-select-green">
+                                <option value="hide">Wybierz Kategorie</option>
+                                <option value="null">Brak Kategorii</option>
+                            </select>
+                            <label class="floating-label floating-label--for-select"
+                                for="upt-task-input-category">Kategoria</label>
+                        </div>
+
+                        <div data-form-date-for-main style="display: none;">
+                            <div data-form-field class="upt-form-field mb-1">
+                                <input class="floating-label-control upt-form-control" type="datetime-local"
+                                    name="upt-task-date-start" id="upt-task-input-time-start" disabled>
+                                <label class="floating-label" for="upt-task-input-time-start">Od kiedy</label>
+                            </div>
+                        </div>
+
+                        <div data-form-date-for-main style="display: none;">
+                            <div data-form-field class="upt-form-field mb-1">
+                                <input class="floating-label-control upt-form-control" type="datetime-local"
+                                    name="upt-task-date-end" id="upt-task-input-date-end" disabled>
+                                <label class="floating-label" for="upt-task-input-date-end">Do kiedy</label>
+                            </div>
+                        </div>
+
+                        <div data-form-date-for-daily>
+                            <div data-form-field class="upt-form-field mb-1">
+                                <input class="floating-label-control upt-form-control" type="time"
+                                    name="upt-task-date-start" id="upt-task-input-date-start">
+                                <label class="floating-label" for="upt-task-input-date-start">Od Której</label>
+                            </div>
+
+                            <div class="custom-checkbox-group">
+                                <input id="upt-task-input-all-day-for-daily" name="upt-task-all-day" type="checkbox">
+                                <label class="custom-checkbox-label" for="upt-task-input-all-day-for-daily">
+                                    <span class="custom-checkbox-icon" aria-hidden="true"></span>
+                                </label>
+                                <label class="custom-checkbox-label" for="upt-task-input-all-day-for-daily">
+                                    Cały dzień
+                                </label>
+                            </div>
+                        </div>
+
+                        <div data-form-field class="upt-form-field mb-1" data-form-date-for-daily>
+                            <input class="floating-label-control upt-form-control" type="time" name="upt-task-date-end"
+                                id="upt-task-input-date-end">
+                            <label class="floating-label" for="upt-task-input-date-end">Do Której</label>
+                        </div>
+
+                        <div data-form-field class="upt-form-select-field">
+                            <select id="upt-task-input-priority" name="upt-task-priority" data-custom-select
+                                data-class-name="custom-select-green">
+                                <option value="hide">Wybierz Piorytet</option>
+                                <option value="Bardzo Wysoki">Bardzo Wysoki</option>
+                                <option value="Wysoki">Wysoki</option>
+                                <option value="Średni">Średni</option>
+                                <option value="Niski">Niski</option>
+                            </select>
+                            <label class="floating-label floating-label--for-select" for="upt-task-input-priority">
+                                Piorytet
+                            </label>
+                        </div>
+
+                        <div data-form-field class="upt-task-desc upt-form-field">
+                            <label class="floating-label" for="upt-task-input-desc">Opis</label>
+                            <textarea rows="5" class="floating-label-control upt-form-control" name="upt-task-desc"
+                                id="upt-task-input-desc" placeholder="Maksymalnie 500 znaków"></textarea>
+                        </div>
+
+                        <div class="upt-subtasks-list-container" data-subtasks-list>
+                            <ul class="subtasks-list"></ul>
+                        </div>
+
+                        <div class="upt-task-form-actions">
+                            <div class="left-actions">
+                                <button data-form-add-subtask class="link medium variant2">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Dodaj Podzadanie
+                                </button>
+                            </div>
+                            <div class="right-actions">
+                                <button class="link medium variant1 js-modal__close">
+                                    Anuluj
+                                </button>
+                                <button data-form-submit-btn type="submit" class="link medium variant2">
+                                    Dodaj
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </template>
+            </custom-modal>
+            <!-- TASK MODAL FORM END -->
+
+            <!-- TASK DETAILS MODAL START -->
+            <custom-modal data-modal-id="user-private-tasks-module-task-details-modal"
+                data-modal-content-class="upt-task-details">
+                <template slot="modal-title">
+                    <span data-task-details-name>Szczegóły Zadania</span>
+                </template>
+                <template slot="modal-content">
+
+                    <div class="upt-task-details-top-content">
+                        <div class="upt-task-details-top-content-left">
+                            <span data-task-details-priority
+                                class="task-priority upt-task-details-priority task-priority--big">
+                                Wysoki piorytet
+                            </span>
+
+                            <span data-task-details-status class="task-status upt-task-details-status task-status--big">
+                                W Trakcie
+                            </span>
+                        </div>
+
+                        <div class="upt-task-details-top-content-right">
+                            <button data-task-details-edit-btn class="link variant2 medium">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                Edytuj
+                            </button>
+                            <button data-task-details-restore-btn class="link variant2 medium">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                Przywróć Zadanie
+                            </button>
+                            <button data-task-details-archive-btn class="link variant2 medium">
+                                <i class="fa-regular fa-folder"></i>
+                                Archiwizuj
+                            </button>
+                            <button data-task-details-end-btn class="link variant2 medium">
+                                <i class="fa-solid fa-check"></i>
+                                Zakończ Zadanie
+                            </button>
+                        </div>
+                    </div>
+
+                    <ul class="upt-task-details-stats-list green-list green-list--variant2 list">
+                        <li class="upt-task-details-stats-created-at">
+                            <span class="text">
+                                <span class="li-title">Dodano:</span>
+                                <span class="tooltip">
+                                    <span class="task-date-full">
+                                        <i class="fa-regular fa-calendar"></i> <span data-task-details-created-at>23 Paź
+                                            2024</span>
+                                    </span>
+                                </span>
+                            </span>
+                            <span class="li-icon" aria-hidden="true">
+                                <i class="fa-regular fa-calendar"></i>
+                            </span>
+                        </li>
+                        <li class="upt-task-details-stats-category">
+                            <span class="text">
+                                <span class="li-title">Kategoria:</span>
+                                <span data-task-details-category>Brak</span>
+                            </span>
+                            <span class="li-icon" aria-hidden="true">
+                                <i data-task-details-category-icon class="fa-solid fa-layer-group"></i>
+                            </span>
+                        </li>
+                        <li class="upt-task-details-stats-deadline-date">
+                            <span class="text">
+                                <span class="li-title">Termin wykonania:</span>
+                                <span class="tooltip" data-task-details-date-end>
+                                    <i class="fa-regular fa-calendar"></i> 23 Października<br>
+                                    <i class="fa-regular fa-clock"></i> 10:00 - 12:30
+                                    <span class="tooltip-content">
+                                        23 Pażdziernika 2024 rok
+                                        Poniedziałek
+                                        <hr class="upt-hr">
+                                        Od 10:00 do 12:30
+                                    </span>
+                                </span>
+                            </span>
+                            <span class="li-icon" aria-hidden="true">
+                                <i class="fa-regular fa-clock"></i>
+                            </span>
+                        </li>
+                        <li class="upt-task-details-stats-type">
+                            <span class="text">
+                                <span class="li-title">Typ Zadania:</span>
+                                <span data-task-details-type>Dzienne</span>
+                            </span>
+                            <span class="li-icon" aria-hidden="true">
+                                <i class="fa-solid fa-list-check"></i>
+                            </span>
+                        </li>
+                        <li class="upt-task-details-stats-deadline-timer">
+                            <span data-task-details-deadline-timer class="text">
+                                <span class="li-title">Do ukończenia zostało:</span>
+                            </span>
+                        </li>
+                        <li data-task-details-desc-container class="upt-task-details-stats-desc">
+                            <span class="text">
+                                <span class="li-title">Opis:</span>
+                                <span data-task-details-desc>
+                                    Lorem, ipsum dolor sit amet
+                                    consectetur adipisicing elit. Quidem rem exercitationem pariatur, mollitia dolore at
+                                    dolores vel corrupti.
+                                </span>
+                            </span>
+                            <span class="li-icon" aria-hidden="true">
+                                <i class="fa-solid fa-pen"></i>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div data-task-details-subtasks-wrapper class="upt-task-details-subtasks">
+
+                        <p class="upt-task-details-subtasks-title">Lista podzadań:</p>
+
+                        <ul data-task-details-subtasks-list class="upt-task-details-subtasks-list subtasks-list">
+                            <li class="subtask task modern-card">
+
+                                <span class="task-checkbox custom-checkbox-group">
+                                    <input id="checks" type="checkbox">
+                                    <label class="custom-checkbox-label" for="checks">
+                                        <span class="sr-only">Oznacz jako wykonane</span>
+                                        <span class="custom-checkbox-icon" aria-hidden="true"></span>
+                                    </label>
+                                </span>
+
+                                <span class="task-content">
+                                    <span class="task-header">
+                                        <span class="subtask-name">Zadanie numer 1</span>
+                                    </span>
+                                </span>
+                            </li>
+                            <li class="subtask task modern-card">
+
+                                <span class="task-checkbox custom-checkbox-group">
+                                    <input id="checks" type="checkbox">
+                                    <label class="custom-checkbox-label" for="checks">
+                                        <span class="sr-only">Oznacz jako wykonane</span>
+                                        <span class="custom-checkbox-icon" aria-hidden="true"></span>
+                                    </label>
+                                </span>
+
+                                <span class="task-content">
+                                    <span class="task-header">
+                                        <span class="subtask-name">Zadanie numer 1</span>
+                                    </span>
+                                </span>
+                            </li>
+                            <li class="subtask task modern-card">
+
+                                <span class="task-checkbox custom-checkbox-group">
+                                    <input id="checks" type="checkbox">
+                                    <label class="custom-checkbox-label" for="checks">
+                                        <span class="sr-only">Oznacz jako wykonane</span>
+                                        <span class="custom-checkbox-icon" aria-hidden="true"></span>
+                                    </label>
+                                </span>
+
+                                <span class="task-content">
+                                    <span class="task-header">
+                                        <span class="subtask-name">Zadanie numer 1</span>
+                                    </span>
+                                </span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="upt-task-details-actions">
+                        <button data-task-details-remove-btn
+                            class="upt-task-details-actions-delete link medium variant2">
+                            <i class="fa-solid fa-trash"></i>
+                            Usuń Zadanie
+                        </button>
+
+                        <button class="link medium variant1 js-modal__close">
+                            <i class="fa-solid fa-xmark"></i>
+                            Zamknij
+                        </button>
+                    </div>
+                </template>
+            </custom-modal>
+            <!-- TASK DETAILS MODAL END -->
+
+            <!-- CATEGORY FORM MODAL START -->
+            <custom-modal data-modal-id="user-private-tasks-module-category-form-modal"
+                data-modal-content-class="upt-category">
+                <template slot="modal-title">Dodaj nową kategorię</template>
+                <template slot="modal-content">
+                    <form id="user-private-tasks-module-category-form" class="upt-category-form">
+                        <input type="hidden" name="upt-category-form-mode">
+                        <input type="hidden" name="upt-category-id">
+
+                        <div data-form-field class="upt-form-field">
+                            <input class="floating-label-control upt-form-control" type="text" name="upt-category-name"
+                                id="upt-category-input-name" placeholder="Nazwa Kategorii">
+                            <label class="floating-label" for="upt-category-input-name">Nazwa Kategorii</label>
+
+                            <i class="upt-icon fa-solid fa-pen"></i>
+                        </div>
+
+                        <div data-form-field class="upt-form-select-field">
+                            <select id="upt-category-input-icon" name="upt-category-icon" data-custom-select
+                                data-class-name="custom-select-green">
+                                <option value="hide">Wybierz Ikonę</option>
+                            </select>
+                            <label class="floating-label floating-label--for-select"
+                                for="upt-category-input-icon">Wybierz Ikonę</label>
+                        </div>
+
+                        <div data-form-field class="upt-category-desc upt-form-field">
+                            <label class="floating-label" for="upt-category-input-desc">Opis</label>
+                            <textarea rows="5" class="floating-label-control upt-form-control " name="upt-category-desc"
+                                id="upt-category-input-desc" placeholder="Maksymalnie 500 znaków"></textarea>
+                        </div>
+
+                        <div class="upt-category-form-actions">
+                            <button class="link medium variant1 js-modal__close">
+                                Anuluj
+                            </button>
+                            <button data-form-submit-btn type="submit" class="link medium variant2">
+                                Dodaj
+                            </button>
+                        </div>
+                    </form>
+                </template>
+            </custom-modal>
+            <!-- CATEGORY FORM MODAL END -->
+
+            <!-- CONFIRM MODAL START -->
+            <custom-modal data-modal-id="user-private-tasks-module-confirm-modal"
+                data-modal-content-class="upt-confirm-modal">
+                <template slot="modal-title">Czy na pewno chcesz wykonać tą operację?</template>
+                <template slot="modal-content">
+                    <div class="upt-confirm-modal-actions">
+                        <button class="link medium variant1 js-modal__close">
+                            Anuluj
+                        </button>
+                        <button data-modal-confirm-button class="link medium variant2">
+                            Zatwierdź
+                        </button>
+                    </div>
+                </template>
+            </custom-modal>
+            <!-- CONFIRM MODAL END -->
+
+            <!-- TOASTS CONTAINER START -->
+            <div id="user-private-tasks-module-toasts-container" class="upt-toast-container"></div>
+            <!-- TOASTS CONTAINER END -->
+        </section>
+        <!-- USER PRIVATE TASKS MODULE END -->
+    </main>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/ApiService.js"></script>
+    <script src="./js/modules.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html> 
