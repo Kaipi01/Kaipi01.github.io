@@ -1,0 +1,40 @@
+@use "../utils/variables" as *;
+
+.navbar-brand {
+  position: relative;
+  z-index: 3;
+  transition: $transition;
+  transition-delay: 0.3s;
+  color: $primary;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $primary;
+  }
+
+  span {
+    transition: $transition;
+    transition-delay: 0.4s;
+    color: $black;
+    font-size: 0.7em;
+  }
+
+  &.active {
+    color: $white;
+
+    span {
+      color: $white;
+    }
+
+    @media (min-width: $lg) {
+      color: $primary;
+
+      span {
+        color: $black;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use "../utils/variables" as *;
+
+.fs-6 {
+  font-size: 1.1rem !important;
+}
+
+.fs-7 {
+  font-size: 1rem !important;
+}
+
+.fs-8 {
+  font-size: 0.9rem !important;
+}
+
+.btn {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+  border-radius: 8px !important;
+}
+
+.btn:focus {
+  outline: auto;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  box-shadow: none !important;
+}
+
+.link-primary,
+.text-primary {
+  color: $primary !important;
+}
+
+.bg-primary,
+.btn-primary,
+.btn-outline-primary:checked {
+  background-color: $primary !important;
+}
+
+.btn-primary,
+.btn-outline-primary {
+  border-color: $primary !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: $primary-hover !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-check:checked + .btn-outline-primary {
+  background-color: $primary !important;
+}

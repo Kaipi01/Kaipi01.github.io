@@ -1,0 +1,18 @@
+@use "../utils/variables" as *;
+
+.header {
+  min-height: 480px;
+  padding-top: 57px;
+
+  @media (min-width: $md) {
+    min-height: 600px;
+  }
+
+  @media (min-width: $lg) {
+    min-height: 700px;
+  }
+
+  @media (min-width: $xxl) {
+    min-height: 800px;
+  }
+}

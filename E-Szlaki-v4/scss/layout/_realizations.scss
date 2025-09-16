@@ -1,0 +1,60 @@
+@use "../utils/variables" as *;
+@use "../components/cover" as *;
+
+.realizations {
+  &__card {
+    position: relative;
+    z-index: 2;
+    width: 165px;
+    height: 245px;
+    padding: 12px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: $black;
+    cursor: pointer;
+
+    @media (min-width: $sm) {
+      width: 175px;
+      height: 245px;
+      padding: 15px;
+    }
+
+    &-title {
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    & * {
+      position: relative;
+      z-index: 2;
+      transition: $transition;
+    }
+
+    &::before {
+      @extend %cover;
+      transition: $transition;
+      -webkit-backdrop-filter: blur(2px);
+              backdrop-filter: blur(2px);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .realizations__img {
+        opacity: 0.4;
+      }
+      & > *:not(img) {
+        transform: translateY(-20px);
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0.75;
+  }
+}

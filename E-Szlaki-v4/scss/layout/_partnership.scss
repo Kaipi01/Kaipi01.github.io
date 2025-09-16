@@ -1,0 +1,54 @@
+@use "../utils/variables" as *;
+@use "../components/cover" as *;
+
+.partnership {
+  position: relative;
+  background-image: url(../src/images/Partnership/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: $md) {
+    padding-bottom: 120px !important;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    @extend %cover;
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+  }
+
+  &::after {
+    @extend %cover;
+    opacity: 0.3;
+    background-color: $black;
+  }
+
+  &__content {
+    gap: 30px;
+
+    @media (min-width: $md) {
+      gap: 90px;
+    }
+  }
+
+  &__logo {
+    width: 75px;
+
+    &--wide {
+      width: 100px;
+    }
+
+    @media (min-width: $sm) {
+      width: 110px;
+
+      &--wide {
+        width: 150px;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "../utils/variables" as *;
+
+.hero__img-mountain {
+  &-1 {
+    right: -395px;
+    bottom: -530px;
+
+    @media (min-width: $md) {
+      right: -310px;
+    }
+
+    @media (min-width: $lg) {
+      right: -205px;
+    }
+
+    @media (min-width: $xxl) {
+      right: -205px;
+    }
+  }
+
+  &-2 {
+    right: -400px;
+    bottom: -400px;
+
+    @media (min-width: $md) {
+      right: -270px;
+      bottom: -415px;
+    }
+
+    @media (min-width: $lg) {
+      right: -140px;
+      bottom: -400px;
+    }
+
+    @media (min-width: $xxl) {
+      right: -70px;
+    }
+  }
+}

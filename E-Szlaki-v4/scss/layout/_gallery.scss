@@ -1,0 +1,67 @@
+@use "../utils/variables" as *;
+
+.gallery {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    @media (min-width: $lg) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      align-items: start;
+      gap: 35px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    transition: $transition-slow;
+    border-radius: 5px;
+
+    @media (min-width: $md) {
+      border-radius: 10px;
+    }
+
+    &-border {
+      height: -webkit-max-content;
+      height: -moz-max-content;
+      height: max-content;
+      border: 5px solid $white;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+
+      &:nth-child(1),
+      &:nth-child(6),
+      &:nth-child(10) {
+        grid-column: span 2;
+      }
+      &:nth-child(7) {
+        grid-row: span 2;
+      }
+
+      @media (min-width: $md) {
+        border: 10px solid $white;
+        border-radius: 20px;
+
+        &:nth-child(6),
+        &:nth-child(10) {
+          grid-column: span 1;
+        }
+      }
+
+      @media (min-width: $lg) {
+        &:nth-child(1) {
+          grid-column: span 2;
+        }
+        &:nth-child(7) {
+          grid-row: span 2;
+          align-self: start;
+        }
+      }
+    }
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}

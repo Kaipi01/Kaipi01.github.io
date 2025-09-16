@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg498"
+   xml:space="preserve"
+   inkscape:export-filename="mountains2.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview500"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false" /><defs
+     id="defs495"><linearGradient
+       id="paint0_linear_901_6"
+       x1="449"
+       y1="-66"
+       x2="449"
+       y2="582"
+       gradientUnits="userSpaceOnUse"><stop
+         stop-color="#A6D3F3"
+         id="stop674" /><stop
+         offset="1"
+         stop-color="#DFEAF2"
+         id="stop676" /></linearGradient></defs><g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1"><g
+       style="fill:none"
+       id="g689"
+       transform="matrix(0,-0.26458333,0.26458333,0,17.337503,247.38541)"><path
+         d="m 102.503,358.666 c 59.003,-46.878 85.981,-123.384 69.432,-196.903 l -3.344,-14.856 C 152.302,74.5464 173.457,-1.15664 224.897,-54.591 L 235.881,-66 H 935 V 834 H 138 L 98.8814,802.636 C 52.4443,765.405 27.8148,707.337 33.3234,648.073 l 2.0984,-22.576 C 37.7397,600.559 31.6044,575.566 18.0022,554.536 -13.2023,506.293 -2.69183,442.242 42.2942,406.501 Z"
+         fill="url(#paint0_linear_901_6)"
+         id="path672"
+         style="fill:url(#paint0_linear_901_6)" /></g></g></svg>

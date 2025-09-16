@@ -1,0 +1,41 @@
+@use "../utils/variables" as *;
+@use "../components/cover" as *;
+
+.about-us {
+  position: relative;
+  background-color: #0c0c0c;
+  background-image: url(../src/images/About-Us/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: $lg) {
+    padding-top: 110px !important;
+  }
+
+  & * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__text {
+    max-width: 135ch;
+    margin: 0 auto;
+    font-size: 15px;
+
+    @media (min-width: $md) {
+      font-size: 17px;
+    }
+  }
+
+  &::before {
+    @extend %cover;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+
+  &::after {
+    @extend %cover;
+    opacity: 0.3;
+    background-color: $black;
+  }
+}

@@ -1,0 +1,30 @@
+@use "../utils/variables" as *;
+
+.footer {
+  padding: 40px 0;
+  &__brand {
+    color: $white !important;
+  }
+
+  p {
+    margin-bottom: 10px !important;
+    font-size: 15px;
+  }
+
+  &__social {
+    list-style: none;
+
+    &-icon {
+      width: 25px;
+      height: 25px;
+      transition: $transition;
+      fill: $white;
+
+      &:hover,
+      &:focus,
+      &:active {
+        fill: $black;
+      }
+    }
+  }
+}

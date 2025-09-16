@@ -1,0 +1,20 @@
+@use "../utils/variables" as *;
+
+.hero__img-human {
+  right: -340px;
+  bottom: -240px;
+
+  @media (min-width: $md) {
+    right: -290px;
+  }
+
+  @media (min-width: $lg) {
+    right: -230px;
+    bottom: -220px;
+  }
+
+  @media (min-width: $xxl) {
+    right: -230px;
+    bottom: -230px;
+  }
+}

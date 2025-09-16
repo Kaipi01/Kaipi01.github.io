@@ -1,0 +1,22 @@
+@use "../utils/variables" as *;
+
+.hero__img-sky {
+  top: -565px;
+  right: -400px;
+  rotate: -20deg;
+
+  @media (min-width: $md) {
+    top: -570px;
+    right: -240px;
+  }
+
+  @media (min-width: $lg) {
+    top: -620px;
+    right: -120px;
+  }
+
+  @media (min-width: $xxl) {
+    top: -650px;
+    right: 0;
+  }
+}
