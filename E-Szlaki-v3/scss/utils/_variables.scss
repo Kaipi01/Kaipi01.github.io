@@ -1,0 +1,23 @@
+
+$white: #fff;
+$black: #000;
+
+$light-green: #83e875;
+$green: #69c25d;
+$dark-green: #45a738;
+
+$gray: rgb(126, 126, 126);
+$light-gray: #e5e5e5;
+$very-light-gray: rgb(249, 249, 249);
+
+$box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+$outline-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px 0px 0 #000, 0px 1px 0 #000, -1px 0px 0 #000, 0px -1px 0 #000, 1px 1px 1px rgba(0,0,0,0);
+
+$transition: all 0.3s ease-in-out;
+$transition-slow: all 0.6s ease-in-out;
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;

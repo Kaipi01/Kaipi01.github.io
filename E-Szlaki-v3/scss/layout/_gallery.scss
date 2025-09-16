@@ -1,0 +1,71 @@
+@use "../utils/variables" as *;
+
+.gallery {
+  z-index: 1;
+
+  &-pictures {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto;
+    gap: 15px;
+
+    img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      transition: $transition-slow;
+
+      &:hover,
+      &:focus,
+      &:active {
+        transform: scale(1.2);
+      }
+    }
+
+    &-big {
+      grid-column: span 2;
+      grid-row: span 2;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    @media (max-width: $md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $sm) {
+      grid-template-columns: 1fr;
+
+      &-big {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+    }
+  }
+
+  &-triangle {
+    z-index: -1;
+    max-width: 270px;
+
+    @media (max-width: $lg) {
+      max-width: 200px;
+    }
+
+    @media (max-width: $md) {
+      max-width: 170px;
+    }
+
+    &-gray {
+      top: -80px;
+      right: 0;
+    }
+
+    &-green {
+      bottom: -80px;
+      left: 0;
+    }
+  }
+}

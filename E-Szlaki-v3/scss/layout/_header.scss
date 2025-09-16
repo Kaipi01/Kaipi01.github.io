@@ -1,0 +1,24 @@
+@use "../utils/variables" as *;
+
+.header {
+  padding-top: 300px;
+  padding-bottom: 100px;
+  background-image: url(../src/assets/landing/wallpaper-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-shadow: $outline-shadow;
+
+  @media (max-width: $md) {
+    padding-top: 175px;
+    padding-bottom: 80px;
+  }
+
+  p {
+    max-width: 68ch;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,123 @@
+@use "../utils/variables" as *;
+@use "../components/point";
+
+.albums {
+  padding-bottom: 80px !important;
+  background-image: url(../src/assets/landing/wallpaper-2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &-intro {
+    max-width: 95ch;
+  }
+
+  &-content {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+
+    @media (max-width: $lg) {
+      max-width: 900px;
+    }
+  }
+
+  &-ul {
+    z-index: 2;
+    list-style: none;
+
+    @media (max-width: $lg) {
+      left: 60px;
+    }
+
+    @media (max-width: $md) {
+      position: static;
+      right: auto;
+      left: auto;
+      width: 100%;
+      margin-top: -25px;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+      width: 300px;
+      margin-bottom: 30px;
+      background-color: $white;
+      box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+
+      a {
+        display: block;
+        width: 100%;
+        padding: 7px;
+        transition: $transition;
+        color: $black;
+        text-decoration: none;
+
+        &:hover,&:focus, &:active {
+            background-color: $light-green;
+        }
+      }
+
+      &:nth-of-type(2) {
+        transform: translateX(-50px);
+      }
+
+      &:nth-of-type(3) {
+        transform: translateX(-75px);
+      }
+
+      &:nth-of-type(4) {
+        transform: translateX(-50px);
+      }
+
+      @media (max-width: $md) {
+        margin: 30px auto;
+        transform: none !important;
+      }
+
+      &::after {
+        @extend %point;
+      }
+    }
+  }
+
+  &-btn {
+    z-index: 2;
+    right: 20px;
+    bottom: -20px;
+    width: 200px;
+
+    @media (max-width: $md) {
+      right: auto;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-img {
+    &-mountain {
+      display: block;
+      top: 0px;
+      right: -100px;
+      max-width: 650px;
+
+      @media (max-width: $lg) {
+        right: 0;
+      }
+
+      @media (max-width: $md) {
+        display: none;
+      }
+    }
+
+    &-climber {
+      z-index: 1;
+      right: -181.6px;
+      bottom: -420px;
+      max-width: 180px;
+    }
+  }
+}

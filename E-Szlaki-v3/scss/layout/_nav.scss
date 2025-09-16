@@ -1,0 +1,84 @@
+@use "../utils/variables" as *;
+
+.nav {
+  &-back-btn {
+    z-index: 99;
+    right: 30px;
+    bottom: 30px;
+    width: 50px !important;
+    min-width: auto;
+    padding: 0;
+    transition: $transition;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    pointer-events: all;
+
+    @media (max-width: $sm) {
+      right: 15px;
+      bottom: 15px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &-hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &-item {
+    img {
+      width: 30px;
+    }
+  }
+
+  &-link {
+    color: $black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $green;
+    }
+  }
+
+  &bar {
+    background-color: $white !important;
+    &-brand {
+      transition: $transition;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $green;
+      }
+    }
+
+    &-menu {
+      border: none;
+      background-color: transparent;
+
+      img {
+        width: 37px;
+        transform: translateY(5px);
+        transition: $transition;
+        opacity: 0.8;
+      }
+
+      &:hover {
+        img {
+          opacity: 1;
+        }
+      }
+
+      &:focus {
+        outline: auto;
+
+        img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

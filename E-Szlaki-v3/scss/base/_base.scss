@@ -1,0 +1,152 @@
+@use "../utils/variables" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden !important;
+  font-size: 16px;
+}
+
+@media (min-width: $md) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: $lg) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 950px;
+  }
+}
+
+@media (min-width: $xl) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1150px;
+  }
+}
+
+@media (min-width: $xxl) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1350px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1480px;
+  }
+}
+
+abbr {
+  text-decoration: none !important;
+}
+
+hr {
+  margin: 0;
+  border-width: 2px;
+  opacity: 0.1;
+}
+
+p {
+  margin: 0 !important;
+}
+
+.fs-6 {
+  font-size: 1.15rem !important;
+}
+
+.fs-7 {
+  font-size: 0.9rem !important;
+}
+
+.btn {
+  min-width: 150px;
+  padding: 4px 30px;
+  border: none;
+  border-radius: 3px;
+
+  &-large {
+    padding: 8px 40px !important;
+    font-size: 1.2rem;
+  }
+
+  &:focus {
+    box-shadow: $black 0px 1px 1px, $black 0px 0px 0px 1px;
+  }
+}
+
+.btn-primary {
+  padding: 6px 30px;
+  background-color: $green;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $dark-green !important;
+  }
+}
+
+.bg-primary {
+  background-color: $green !important;
+}
+
+.text-primary {
+  color: $green !important;
+}
+
+.border-primary {
+  border-color: $green !important;
+}
+
+.btn-secondary {
+  border: 2px solid $gray;
+  background-color: $light-gray;
+  color: $black;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $gray !important;
+  }
+}
+
+.bg-secondary {
+  background-color: $light-gray !important;
+}
+
+.text-secondary {
+  color: $gray !important;
+}
+
+.border-secondary {
+  border-color: $light-gray !important;
+}
