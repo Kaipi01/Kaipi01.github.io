@@ -1,0 +1,367 @@
+@use "../components/modern-card" as *;
+
+#random-trail-info {
+  --grid-gap-large: 2.5rem;
+  --grid-gap-medium: 2rem;
+  --grid-gap-small: 1rem;
+  --trail-info-graphs-margin-big: -2rem;
+  --trail-info-graphs-margin: -1rem;
+
+  padding: 5rem 0;
+  background: linear-gradient(
+    to left,
+    var(--background-gray),
+    var(--background)
+  );
+
+  .header {
+    .text {
+      max-width: 60rem;
+      font-size: 1rem;
+    }
+  }
+
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: var(--grid-gap-small);
+
+    @media (min-width: 75em) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--grid-gap-medium);
+
+      .content-right {
+        order: 2;
+      }
+    }
+
+    @media (min-width: 87.5em) {
+      grid-auto-flow: row dense;
+      grid-template-columns: 30rem 1fr;
+      align-items: stretch;
+      gap: var(--grid-gap-large);
+    }
+
+    .panel {
+      @extend %modern-card; 
+      background: linear-gradient(
+        to top,
+        var(--background-gray),
+        var(--background)
+      );
+
+      @media (min-width: 62.5em) {
+        padding: 1.5rem;
+      }
+      @media (min-width: 75em) {
+        padding: 2rem;
+      }
+    }
+
+    .content-right {
+      .trail-preview-panel,
+      .trail-map-link {
+        position: relative;
+        min-height: 20rem !important;
+        background-color: lightgreen;
+
+        @media (min-width: 62.5em) {
+          min-height: 27rem !important;
+        }
+      }
+
+      .trail-info-hr {
+        position: relative;
+        z-index: 2;
+        height: 3rem;
+        margin-block: var(--trail-info-graphs-margin);
+        border-radius: 0;
+        background: var(--dark-green);
+        background: linear-gradient(
+          to right,
+          var(--dark-green),
+          var(--dark-gray)
+        );
+
+        @media (min-width: 62.5em) {
+          margin-block: var(--trail-info-graphs-margin-big);
+        }
+      }
+
+      .trail-preview-panel {
+        position: relative;
+        padding: 0;
+        overflow: hidden;
+
+        .trail-preview-slider { 
+
+          & > div {
+            width: 100%;
+            height: 27rem;
+          }
+        }
+
+        .trail-preview-slider-navigation {
+          display: flex;
+          position: absolute;
+          z-index: 3;
+          right: 0;
+          bottom: calc(var(--trail-info-graphs-margin) * -1);
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+
+          @media (min-width: 62.5em) {
+            bottom: calc(var(--trail-info-graphs-margin-big) * -1);
+            gap: 2rem;
+          }
+
+          .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: 0.3s;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            gap: 0.25rem;
+
+            svg {
+              width: 1.5rem;
+            }
+
+            @media (min-width: 62.5em) {
+              font-size: 0.9rem;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+              color: var(--very-light-green);
+
+              svg {
+                path {
+                  transition: 0.3s;
+                  fill: var(--very-light-green);
+                }
+              }
+            }
+          }
+        }
+
+        .trail-preview-img { 
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover; 
+        }
+
+        .trail-preview-name {
+          display: inline-flex;
+          z-index: 2;
+          align-items: center;
+          justify-content: space-between; 
+          font-size: 0.9rem; 
+          gap: 0.5rem;
+
+          @media (min-width: 62.5em) {
+            font-size: 1.5rem;
+            gap: 1rem;
+          }
+        }
+
+        .trail-preview-icon {
+          width: 1.5rem;
+          border-radius: 10px;
+
+          @media (min-width: 62.5em) {
+            width: 3rem;
+          }
+        }
+      }
+
+      .trail-map-link {
+        display: block;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background-image: url("../images/example-map.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          &::after {
+            transform: translateX(0);
+          }
+
+          .trail-map-link-text {
+            opacity: 1;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: translateX(-100%);
+          transition: 0.4s;
+          border-radius: inherit;
+          background-color: var(--black-opacity-50);
+        }
+
+        .trail-map-link-text {
+          position: absolute;
+          z-index: 2;
+          top: 50%;
+          left: 50%;
+          transform: translate(
+            -50%,
+            calc(-50% - (var(--trail-info-graphs-margin) / 2))
+          );
+          transition: 0.4s;
+          opacity: 0;
+          font-size: 1.25rem;
+          font-weight: bold;
+          text-align: center;
+
+          @media (min-width: 62.5em) {
+            transform: translate(
+              -50%,
+              calc(-50% - (var(--trail-info-graphs-margin-big) / 2))
+            );
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    .content-left {
+      display: grid;
+      gap: var(--grid-gap-small);
+
+      @media (min-width: 50em) {
+        gap: var(--grid-gap-medium);
+      }
+
+      @media (min-width: 75em) {
+        gap: var(--grid-gap-large);
+      }
+
+      .header-hr {
+        width: 100%;
+        margin: 0;
+      }
+
+      .trial-data-container {
+        display: grid;
+        place-items: center start;
+        gap: 0.5rem;
+      }
+
+      .action-links-wrapper {
+        display: grid;
+        place-items: center;
+        gap: 1rem;
+        padding-bottom: 2rem;
+      }
+
+      .action-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        gap: 0.5rem;
+
+        svg {
+          height: 1.5rem;
+        }
+      }
+
+      .trial-data {
+        width: 100%;
+
+        &-name {
+          display: inline-flex;
+          align-items: center;
+          justify-content: start;
+          margin-bottom: 0.75rem;
+          font-size: 0.85rem;
+          font-weight: normal;
+          gap: 0.5rem;
+
+          @media (min-width: 31.25em) {
+            font-size: 1rem;
+          }
+
+          @media (min-width: 62.5em) {
+            font-size: 1.2rem;
+          }
+        }
+        &-icon {
+          height: 1.75rem;
+        }
+
+        &-value {
+          font-weight: bold;
+        }
+
+        &-max-info {
+          padding-top: 0.25rem;
+          padding-bottom: 0;
+          font-size: 0.8rem;
+          font-weight: bold;
+          text-align: right;
+        }
+
+        .animated-progress {
+          --progress-bar-height: 0.5rem;
+        }
+      }
+    }
+
+    .content-bottom {
+      display: grid;
+      position: relative;
+      z-index: 2;
+      order: 3;
+
+      gap: var(--grid-gap-small);
+
+      @media (min-width: 50em) {
+        gap: var(--grid-gap-medium);
+      }
+
+      @media (min-width: 75em) {
+        grid-column: span 2;
+        gap: var(--grid-gap-large);
+      }
+
+      .categories-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+        list-style: none;
+        gap: 1rem;
+      }
+
+      .tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 2rem;
+        list-style: none;
+        gap: 0.5rem;
+      }
+    }
+  }
+}

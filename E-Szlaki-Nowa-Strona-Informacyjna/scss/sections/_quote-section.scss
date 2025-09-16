@@ -1,0 +1,143 @@
+#quote-section {
+  padding: 10rem 0;
+  -webkit-animation: quote-gradient 15s ease infinite;
+  animation: quote-gradient 15s ease infinite;
+  background: linear-gradient(
+    -45deg,
+    #00bbff,
+    #00ffc3,
+    var(--light-green),
+    var(--green)
+  );
+  background-size: 400% 400%;
+
+  .wrapper {
+    margin: auto;
+    padding-inline: 2rem;
+    border-radius: 20px;
+    background: #000000c7;
+    background: linear-gradient(to right, #000000dc, #000000c0);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .quote-figure {
+    display: flex;
+
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .blockquote {
+    position: relative;
+    z-index: 2; 
+    padding-inline: 0.8rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5;
+
+    @media (min-width: 31.25em) { 
+      max-width: 20ch;
+      font-size: 2rem;
+    }
+
+    @media (min-width: 43.75em) {
+      max-width: 30ch;
+      font-size: 2.75rem;
+    }
+
+    @media (min-width: 62.5em) {
+      max-width: 40ch;
+      font-size: 3rem;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    width: 1rem;
+
+    path {
+      fill: var(--very-light-green);
+    }
+
+    @media (min-width: 31.25em) { 
+      width: 2rem;
+    }
+
+    @media (min-width: toRem(768)) {
+      z-index: 0;
+      width: 5rem;
+    }
+  }
+
+  .icon-left {
+    top: 0;
+    left: -1.4rem;
+
+    @media (min-width: 62.5em) {
+      left: -1.7rem;
+    }
+    @media (min-width: 87.5em) {
+      left: -1.95rem;
+    }
+  }
+
+  .icon-right {
+    right: -1.4rem;
+    bottom: 0;
+
+    @media (min-width: 62.5em) {
+      right: -1.7rem;
+    }
+    @media (min-width: 87.5em) {
+      right: -1.95rem;
+    }
+  }
+
+  .blockquote-figcaption {
+    line-height: 1.6;
+  }
+
+  .blockquote-name {
+    margin-top: 1.5rem;
+    color: var(--very-light-green);
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    @media (min-width: toRem(768)) {
+      font-size: 1.35rem;
+    }
+
+    @media (min-width: toRem(1200)) {
+      font-size: 1.5rem;
+    }
+  }
+}
+@-webkit-keyframes quote-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes quote-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

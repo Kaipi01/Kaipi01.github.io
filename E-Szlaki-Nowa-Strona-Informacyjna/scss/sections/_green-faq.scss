@@ -1,0 +1,88 @@
+#green-faq {
+  padding-block: 6rem;
+  background: var(--dark-gray);
+  background: linear-gradient(
+    to left,
+    var(--background-gray),
+    var(--background)
+  );
+
+  .container {
+    display: grid;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+    padding-bottom: 3.5rem;
+    border-radius: 35px;
+    background: var(--light-green-opacity);
+    background: linear-gradient(
+      to top right,
+      var(--dark-gray),
+      var(--dark-green)
+    );
+    box-shadow: -27px 27px 39px 3px rgba(0, 0, 0, 0.46);
+    color: #fff;
+    gap: 5rem;
+
+    @media (min-width: 30rem) {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      padding: 2.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    @media (min-width: 50rem) {
+      padding: 4.5rem;
+    }
+  }
+
+  .green-list.list {
+    .li-title {
+      color: #fff;
+    }
+  }
+
+  .text {
+    color: var(--very-light-gray);
+  }
+
+  .content {
+    padding-top: 2rem;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header svg > path {
+    stroke: var(--light-green);
+    opacity: 0.5;
+    fill: var(--light-green);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+
+  
+
+
+}
+
+.dark {
+  #green-faq {
+    .container {
+      background: linear-gradient(
+        to top right,
+        var(--dark-gray),
+        var(--dark-green),
+        var(--light-green-opacity)
+      );
+    }
+  }
+}
